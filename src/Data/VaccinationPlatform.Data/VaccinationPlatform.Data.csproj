@@ -44,4 +44,10 @@
     <ProjectReference Include="..\VaccinationPlatform.Data.Models\VaccinationPlatform.Data.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Seeding\DsitrictsAandTowns.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
