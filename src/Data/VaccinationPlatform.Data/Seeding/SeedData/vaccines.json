@@ -1,0 +1,72 @@
+[
+  {
+    "name": "VARIVAX ",
+    "information": "VARIVAX is a vaccine indicated for active immunization for the prevention of varicella in individuals 12 months of age or older. Varivax [Varicella Virus Vaccine Live] is a preparation of the Oka/Merck strain of live, attenuated varicella virus.The product also contains residual components of MRC-5 cells including DNA and protein and trace quantities of sodium phosphate monobasic, EDTA, neomycin and fetal bovine serum. The product contains no preservative.",
+    "diseaseId": 1
+  },
+  {
+    "name": "INFANRIX",
+    "information": "nfanrix (Diphtheria and Tetanus Toxoids and Acellular Pertussis Vaccine Adsorbed) is a noninfectious, sterile vaccine for intramuscular administration.The diphtheria toxin is produced by growing Corynebacterium diphtheriae (C. diphtheriae) in Fenton medium containing a bovine extract.",
+    "diseaseId": 2
+  },
+  {
+    "name": "FLUAD",
+    "information": "FLUAD is a standard-dose, inactivated influenza (flu) vaccine, manufactured by Seqirus that contains an adjuvant.An adjuvant is an ingredient of a vaccine that helps promote a better immune response. Adjuvants also can reduce the amount of virus needed for production of a vaccine, which can allow for greater supplies of vaccine to be manufactured.",
+    "diseaseId": 3
+  },
+  {
+    "name": "FLUARIX",
+    "information": "FLUARIX is an inactivated influenza virus vaccine used for the prevention of influenza. The vaccine is used to prevent infection caused by influenza virus. The vaccine is redeveloped each year to contain specific strains of inactivated (killed) flu virus that are recommended by public health officials for that year. The injectable Fluarix Quadrivalent (flu shot) is a \"killed virus\" vaccine.",
+    "diseaseId": 3
+  },
+  {
+    "name": "HAVRIX",
+    "information": "HAVRIX vaccine is used to help prevent this disease in adults. Havrix works by exposing you to a small amount of the virus, which causes the body to develop immunity to the disease. This vaccine will not treat an active infection that has already developed in the body. Like any vaccine, Havrix may not provide protection from disease in every person.",
+    "diseaseId": 4
+  },
+  {
+    "name": "RECOMBIVAX HB",
+    "information": "RECOMBIVAX HB Hepatitis B Vaccine (Recombinant) is a sterile suspension of non-infectious subunit viral vaccine derived from HBsAg produced in yeast cells. A portion of the hepatitis B virus gene, coding for HBsAg, is cloned into yeast, and the vaccine for hepatitis B is produced from cultures of this recombinant yeast strain according to methods developed in the Merck Research Laboratories.",
+    "diseaseId": 5
+  },
+  {
+    "name": "IPOL",
+    "information": "IPOL vaccine is used to help prevent these diseases in children and adults.This vaccine works by exposing you to a small dose of the virus, which causes the body to develop immunity to the disease. This vaccine will not treat an active infection that has already developed in the body. Polio vaccine is for use in adults and children who are at least 6 weeks old.",
+    "diseaseId": 6
+  },
+  {
+    "name": "BOOSTRIX",
+    "information": "BOOSTRIX is especially important for healthcare workers or people who have close contact with a baby younger than 12 months old. Boostrix works by exposing you to a small dose of the bacteria or a protein from the bacteria, which causes the body to develop immunity to the disease. This vaccine will not treat an active infection that has already developed in the body.",
+    "diseaseId": 7
+  },
+  {
+    "name": "ROTARIX",
+    "information": "ROTARIX vaccine is used to help prevent this disease in children. Rotarix works by exposing your child to a small dose of the virus, which causes the body to develop immunity to the disease. This vaccine will not treat an active infection that has already developed in the body. Rotarix is for use in children between the ages of 6 weeks and 24 weeks old. The first dose should be administered to infants beginning at 6 weeks of age. ",
+    "diseaseId": 8
+  },
+  {
+    "name": "MENACTRA",
+    "information": "MENACTRA is for use in children and adults between the ages of 9 months and 55 years old. Menactra works by exposing you to a small dose of the bacteria or a protein from the bacteria, which causes your body to develop immunity to the disease. Menactra contains four of the most common types of meningococcal bacteria (serogroups A, C, Y, and W-135).",
+    "diseaseId": 9
+  },
+  {
+    "name": "PFIZER-BIONTECH",
+    "information": "The Pfizer vaccine is for use in people who are at least 12 years old. This vaccine may help your body develop immunity to SARS-CoV-2. However, this vaccine has not been approved to prevent or treat coronavirus or COVID-19. COVID-19 vaccine is experimental and all of its risks are not yet known. The COVID-19 vaccine does not contain coronavirus and cannot give you COVID-19.",
+    "diseaseId": 10
+  },
+  {
+    "name": "MODERNA",
+    "information": "The Moderna COVID-19 Vaccine  may help your body develop immunity to SARS-CoV-2. However, this vaccine has not been approved to prevent or treat coronavirus or COVID-19. COVID-19 vaccine is experimental and all of its risks are not yet known. The COVID-19 vaccine does not contain coronavirus and cannot give you COVID-19.",
+    "diseaseId": 10
+  },
+  {
+    "name": "Ad26.COV2-S(Johnson & Johnson’s Janssen)",
+    "information": "Ad26.COV2-S is a monovalent vaccine composed of a recombinant, replication incompetent adenovirus serotype 26 (Ad26) vector, constructed to encode the SARS-CoV-2 virus spike (S) protein. Efficacy and safety data from the Phase 3 ENSEMBLE clinical trial demonstrated that the investigational single-dose COVID-19 vaccine was 72% effective in the U.S. and 66% effective overall at preventing moderate to severe COVID-19, 28 days after vaccination.",
+    "diseaseId": 10
+  },
+  {
+    "name": "AZD1222 (Oxford–AstraZeneca COVID-19 vaccine)",
+    "information": "AZD1222 works by using a viral vector (ChAdOx1 - chimpanzee adenovirus Oxford 1) based on a weakened version of a common cold (adenovirus) virus that contains the genetic material of the SARS-CoV-2 virus spike protein. After vaccination, the surface spike protein is produced, priming the immune system to attack the virus if it later infects the body, protecting it against COVID-19.",
+    "diseaseId": 10
+  }
+]

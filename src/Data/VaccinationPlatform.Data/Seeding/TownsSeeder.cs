@@ -8,7 +8,7 @@ using VaccinationPlatform.Data.Models;
 
 namespace VaccinationPlatform.Data.Seeding
 {
-   public class TownSeeder : ISeeder
+   public class TownsSeeder : ISeeder
     {
         // Town name is at the 0th index in the csv line
         private const int TownNameIndex = 0;
@@ -19,7 +19,7 @@ namespace VaccinationPlatform.Data.Seeding
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
                                                             // TODO: Use a relative path
-            string input = await File.ReadAllTextAsync(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\DsitrictsAandTowns.csv");
+            string input = await File.ReadAllTextAsync(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\SeedData\districtsAndTowns.csv");
             string[] infoLine = input.Split("\r\n");
 
             for (int i = 0; i < infoLine.Length; i++)

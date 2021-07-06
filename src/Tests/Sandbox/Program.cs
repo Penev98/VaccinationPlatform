@@ -1,8 +1,10 @@
 ﻿namespace Sandbox
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
+    using System.Text.Json;
     using System.Threading.Tasks;
 
     using CommandLine;
@@ -16,70 +18,82 @@
     using VaccinationPlatform.Data.Models;
     using VaccinationPlatform.Data.Repositories;
     using VaccinationPlatform.Data.Seeding;
+    using VaccinationPlatform.Services.Data.DataTransferObjects;
 
     // using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Messaging;
 
     public static class Program
     {
-        public static int Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine($"{typeof(Program).Namespace} ({string.Join(" ", args)}) starts working...");
-            var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
-            IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider(true);
+            var hospitalDtos = JsonSerializer.Deserialize<List<HospitalDto>>(File.ReadAllText(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\test_Seed_Hospitals.json"));
 
-            // Seed data on application startup
-            using (var serviceScope = serviceProvider.CreateScope())
+            foreach (var dto in hospitalDtos)
             {
-                var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                dbContext.Database.Migrate();
-                new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
+                Hospital hospital = new Hospital();
+                hospital.Name = dto.name;
+                hospital.Description = dto.description;
+                hospital.TownId = dto.townId;
             }
 
-            using (var serviceScope = serviceProvider.CreateScope())
-            {
-                serviceProvider = serviceScope.ServiceProvider;
+            //    Console.WriteLine($"{typeof(Program).Namespace} ({string.Join(" ", args)}) starts working...");
+            //    var serviceCollection = new ServiceCollection();
+            //    ConfigureServices(serviceCollection);
+            //    IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider(true);
 
-                return Parser.Default.ParseArguments<SandboxOptions>(args).MapResult(
-                    opts => SandboxCode(opts, serviceProvider).GetAwaiter().GetResult(),
-                    _ => 255);
-            }
-        }
+            //    // Seed data on application startup
+            //    using (var serviceScope = serviceProvider.CreateScope())
+            //    {
+            //        var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            //        dbContext.Database.Migrate();
+            //        new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
+            //    }
 
-        private static async Task<int> SandboxCode(SandboxOptions options, IServiceProvider serviceProvider)
-        {
-            var sw = Stopwatch.StartNew();
+            //    using (var serviceScope = serviceProvider.CreateScope())
+            //    {
+            //        serviceProvider = serviceScope.ServiceProvider;
 
-         
-            Console.WriteLine(sw.Elapsed);
-            return await Task.FromResult(0);
-        }
+            //        return Parser.Default.ParseArguments<SandboxOptions>(args).MapResult(
+            //            opts => SandboxCode(opts, serviceProvider).GetAwaiter().GetResult(),
+            //            _ => 255);
+            //    }
+            //}
 
-        private static void ConfigureServices(ServiceCollection services)
-        {
-            var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", false, true)
-                .AddEnvironmentVariables()
-                .Build();
-
-            services.AddSingleton<IConfiguration>(configuration);
-
-            services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-                    .UseLoggerFactory(new LoggerFactory()));
-
-            services.AddDefaultIdentity<ApplicationUser>(IdentityOptionsProvider.GetIdentityOptions)
-                .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
-
-            services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
-            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-            services.AddScoped<IDbQueryRunner, DbQueryRunner>();
-
-            // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            //private static async Task<int> SandboxCode(SandboxOptions options, IServiceProvider serviceProvider)
+            //{
+            //    var sw = Stopwatch.StartNew();
 
 
+            //    Console.WriteLine(sw.Elapsed);
+            //    return await Task.FromResult(0);
+            //}
+
+            //private static void ConfigureServices(ServiceCollection services)
+            //{
+            //    var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+            //        .AddJsonFile("appsettings.json", false, true)
+            //        .AddEnvironmentVariables()
+            //        .Build();
+
+            //    services.AddSingleton<IConfiguration>(configuration);
+
+            //    services.AddDbContext<ApplicationDbContext>(
+            //        options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            //            .UseLoggerFactory(new LoggerFactory()));
+
+            //    services.AddDefaultIdentity<ApplicationUser>(IdentityOptionsProvider.GetIdentityOptions)
+            //        .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //    services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
+            //    services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+            //    services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+
+            //    // Application services
+            //    services.AddTransient<IEmailSender, NullMessageSender>();
+
+
+            //}
         }
     }
 }

@@ -28,6 +28,9 @@
                               // new RolesSeeder(),
                               // new DistrictSeeder(),
                               // new TownSeeder(),
+                              // new HospitalsSeeder(),
+                              // new DiseasesSeeder(),
+                              new VaccinesSeeder(),
                           };
 
             foreach (var seeder in seeders)

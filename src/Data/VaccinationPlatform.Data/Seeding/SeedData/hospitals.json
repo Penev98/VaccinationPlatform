@@ -1,0 +1,497 @@
+[
+    {
+        "name": "MBAL Life Hospital EOOD",
+        "description": "MBAL Life Hospital EOOD offers diagnosis and treatment of acute diseases, injuries, exacerbated chronic diseases, conditions requiring surgical treatment in hospital conditions, in the following medical specialties: internal medicine, obstetrics and gynecology, surgery, orthopedics and traumatology, urology, neurology, anesthesiology and intensive care, psychiatry and other.",
+        "townId": 144
+    },
+    {
+        "name": "UMBAL Deva Maria EOOD",
+        "description": "UMBAL Deva Maria is a private Bulgarian hospital, located in the town of Burgas. The hospital was opened in 2009 and currently offers professional medical treatment in a total of 13 wards.",
+        "townId": 144
+    },
+    {
+        "name": "MBAL D-r Madjurov OOD",
+        "description": "MBAL D-r Madjurov OOD was established on the basis of \"Specialized Surgical Hospital\" Burgas – the first private surgical hospital in Burgas (the third private hospital in the country) – in 1994. The hospital has 60 beds, has gone through all certification and licensing regimes and meets the highest standards in modern medicine.",
+        "townId": 144
+    },
+    {
+        "name": "MBAL Burgasmed",
+        "description": "Burgasmed General Hospital for Active Treatment is part of a chain of medical institutions operating on the territory of the Republic of Bulgaria. The medical center is the largest health institution established with private investment in burgas region.",
+        "townId": 144
+    },
+    {
+        "name": "SBALPF3 Burgas EOOD",
+        "description": "SBALPFZ Burgas EOOD is the only medical institution on the territory of Burgas region, which carries out the full volume of activity of diagnosis, differential diagnostics, treatment and dispensary monitoring of patients with acute and exacerbated chronic lung diseases and tuberculosis.",
+        "townId": 144
+    },
+    {
+        "name": "UMBAL St. Marina EAD",
+        "description": "University General Hospital for Active Treatment \"St. Marina\" EAD, Varna is the successor of varna university hospital. It is the largest diagnostic and medical and consultative university hospital complex in Northeastern Bulgaria, serving a population from all over the country, which has over 1300 beds.",
+        "townId": 145
+    },
+    {
+        "name": "MBAL St. Anna AD",
+        "description": "St. Anna-Varna Hospital has about 420 beds and annually between 22 and 23 thousand patients pass through it. Their health is cared for by highly qualified doctors and nurses.",
+        "townId": 145
+    },
+    {
+        "name": "MBAL Varna EOOD",
+        "description": "General Hospital for Active Treatment Varna EOOD is a medical institution of the Ministry of Transport, Information Technology and Communications. Established by Decree of Tsar Boris III in 1918 under the name 'Regional Medical Service'.",
+        "townId": 145
+    },
+    {
+        "name": "MBAL Eurohospital Varna",
+        "description": "The hospital is located in a new, independent, modern and specially built in 2005. for this purpose a building, headquartered in Varna, sq.m. Vinnitsa Str. \"Nayden Raykov\" No 2A. In the immediate vicinity are the resort complexes – \"Golden Sands\" and \"St. Constantine and Elena\".",
+        "townId": 145
+    },
+    {
+        "name": "MBAL Varna(VMA)",
+        "description": "MBAL Varna at VMA is a leader among the hospitals in the sea capital, thanks to its long experience and traditions,modern facilities and prepared and motivated staff.Its doors are wide open not only to patients \"under a pagone\", but also to all Bulgarians. Varna Hospital works on 149 clinical pathways, 2 clinical and 13 outpatient procedures, and there is also a contract with 6 health insurance funds.",
+        "townId": 145
+    },
+    {
+        "name": "MBAL Blagoevgrad AD",
+        "description": "MBAL Blagoevgrad AD is a medical institution for hospital care. The hospital offers quality and affordable hospital care aimed at restoring and strengthening the health of the population.",
+        "townId": 133
+    },
+    {
+        "name": "MBAL Puls AD",
+        "description": "MBAL Puls AD is the newest multi-profile hospital in the Blagoevgrad district. The hospital and medical center are located on eight floors in a luxurious building with modern architectural design, designed solely for medical purposes. The building was built in 2008. and has an extremely favorable location – in an area allocated for medical activities in close proximity to the former regional polyclinic and regional hospital in Blagoevgrad.",
+        "townId": 133
+    },
+    {
+        "name": "SBALO St. Mina EOOD",
+        "description": "SBALO St. Mina EOOD is a medical institution with regional functions for the population of Blagoevgrad region. SBALO Sveti Mina Blagoevgrad has traditions in the diagnosis, early detection, complex treatment and dispensary monitoring of patients with oncological malignancies and benign diseases.",
+        "townId": 133
+    },
+    {
+        "name": "MOBAL D-r Stefan Cherkezov AD",
+        "description": "MOBAL D-r Stefan Cherkezov AD is  the largest medical institution for hospital care on the territory of Veliko Tarnovo Region. The hospital has over 140 years of history, established immediately after the Russo-Turkish Liberation War. It's located at two bases. With the available equipment and staff provides highly qualified and closely profiled hospital medical care.",
+        "townId": 132
+    },
+    {
+        "name": "SBALK Veliko Tarnovo EAD",
+        "description": "Specialized hospital for active treatment in cardiology - Veliko Tarnovo EOD is a medical institution providing emergency and planned invasive cardiac care for the region of Central and Northeastern Bulgaria.",
+        "townId": 132
+    },
+    {
+        "name": "SBALPF3 D-r Trayman EOOD",
+        "description": "SBALPFZ \"Dr. Treyman\" EOOD – Veliko Tarnovo is the only specialized medical institution in Veliko Tarnovo Region, which provides highly qualified pneumo-phthysiatric medical care without interruption. It employs some of the most highly qualified specialists in respiratory medicine in Veliko Tarnovo Province.",
+        "townId": 132
+    },
+    {
+        "name": "MBAL Professor D-r Georgi Zlatarski EOOD",
+        "description": "General Hospital for Active Treatment \"Prof. Dr. Georgi Zlatarski\" EOOD, has developed dynamically over the years, underslored structural changes, modernized its base and this turned it into an authoritative and preferred medical institution.",
+        "townId": 257
+    },
+    {
+        "name": "MBAL St. Petka AD",
+        "description": "According to the National Health Card \"St. Petka\" Hospital, Vidin is a medical institution with regional functions, providing highly specialized medical care to patients, according to the standards of good medical practice and treatment, in compliance with the professional ethics and rights of patients.",
+        "townId": 150
+    },
+    {
+        "name": "MBAL Biala Slatina EOOD",
+        "description": "MBAl Biala Slatina EOOD holds a permit for carrying out healing activities and diagnosis and treatment of diseases, when the healing activity can not be carried out in outpatient care. The hospitals offers: Anesthesiology and intensive care, Internal medicine, Surgery, Pediatrics and other.",
+        "townId": 124
+    },
+    {
+        "name": "MBAL Hristo Botev AD",
+        "description": "MBAL Hristo Botev was discovered in September 1888 in a private house with 40 beds, divided into two compartments - male and female. Currently, the hospital has 300 beds and 576 staff. The mission of the hospital is to provide high-quality inpatient and outpatient treatment corresponding to the level of good medical practice.",
+        "townId": 131
+    },
+    {
+        "name": "First Private Hospital MBAL Vratsa",
+        "description": "First Private Hospital MBAL, Vratsa was revealed in 2007 as EOOD. Since its inception, the hospital has been accredited by the Ministry of Health with 5 stars in 5 years and has been working under a contract with the National Health Insurance Fund for all clinical pathways in the field of orthopedics and traumatology.",
+        "townId": 131
+    },
+    {
+        "name": "MBAL D-r Tota Venkova AD",
+        "description": "MBAL D-r Tota Venkova AD is the largest hospital in Gabrovo Region, which offers qualified, specialized, planned and emergency medical care for a region with 140 000 population of four municipalities and patients from neighboring districts. The medical institution operates 17 wards with beds, 6 wards without beds and 2 clinic diagnostic structures and activities are carried out on 35 medical specialties.",
+        "townId": 148
+    },
+    {
+        "name": "MBAL St. Ivan Rilski EOOD",
+        "description": "MBAL St. Ivan Rilski EOOD is a specialized medical institution that offers its patients a high level of service, professionally prepared specialists and state-of-the-art diagnostic and treatment equipment.",
+        "townId": 148
+    },
+    {
+        "name": "SBALBB Gabrovo EOOD",
+        "description": "The hospital is located in the regulatory plans of the city of Sofia. Gabrovo, in a natural forest park, 800 meters away from a main, urban, road artery. \"SBALBB Gabrovo EOOD\" carries out legitimate medical activity in accordance with an activity permit. It has clearly defined societal objectives, subject matter, priorities and tasks and provides training conditions for the specialty \"Pneumology and Phthisiatrics\".",
+        "townId": 148
+    },
+    {
+        "name": "MBAL Dorich AD",
+        "description": "MBAL Dorich AD is the largest hospital in Dobrich Province and provides a health service to the population of 8 municipalities – Dobrich, Dobrich, Kavarna, Balchik, Shabla, Tervel, Krushari, General Toshevo. The total number of beds for active hospital treatment is 336, which are divided into 25 wards.",
+        "townId": 139
+    },
+    {
+        "name": "MBAL Professor D-r Paraskev Stoianov AD",
+        "description": "Multi-profile hospital for active treatment \"Professor Dr. Paraskev Stoyanov\" offers quality and affordable inpatient careaimed at diagnosis and active treatment, restoring and strengthening the health of the population ,lowering morbidity and mortality and improving the quality of life of people living in the city of Lovech.",
+        "townId": 163
+    },
+    {
+        "name": "MBAL D-r Stamen Iliev AD",
+        "description": "The hospital is located in three main housings - central, infectious and pneumoftisiatric. It has 400 beds spread across 17 clinical wards. The structure of The Montana Hospital includes 4 more compartments without beds; 3 laboratories; pharmacy and administrative-business block.",
+        "townId": 167
+    },
+    {
+        "name": "MBAL City Clinic - St. Georgi EOOD",
+        "description": "The hospital is located on 5 000 sq.m. area and has 5 high-tech compartments, distributed in a stationary and advisory - diagnostic block, a base of 147 beds and 248 people highly qualified staff. The extremely communicative location, investments in modern equipment and a world-class team make \"City Clinic – St. George\" Montana Hospital the most modern high-tech hospital in Northwestern Bulgaria.",
+        "townId": 167
+    },
+    {
+        "name": "MBAL Pazardzhik AD",
+        "description": "MBAL Pazardzhik AD is a regional hospital that serves a region of over 260 thousand people and provides timely and high-quality medical care, as well as a continuous healing process. The hospital employs more than 800 people, including 157 senior medical staff with one or more specialties, 280 health care professionals and 280 service personnel.",
+        "townId": 136
+    },
+    {
+        "name": "MBAL Higia AD",
+        "description": "Multi-profile hospital for active treatment \"Higia\" is equipped with modern equipment for endoscopic and laparoscopic surgical interventions and catheterization room for interventional cardiology. The operating rooms are also equipped with a video and audio exchange and surveillance system, built on the principle of telemedicine.",
+        "townId": 136
+    },
+    {
+        "name": "MBAL Higia-North OOD",
+        "description": "Multi-profile hospital for active treatment \"Higia\" is equipped with modern equipment for endoscopic and laparoscopic surgical interventions and catheterization room for interventional cardiology. The operating rooms are also equipped with a video and audio exchange and surveillance system, built on the principle of telemedicine.",
+        "townId": 136
+    },
+    {
+        "name": "MS Zdrave",
+        "description": "Medical Structure \"Zdrave\" is part of a chain of medical institutions operating on the territory of the Republic of Bulgaria.The hospital's inpatient unit has 226beds.The hospital is equipped with modernequipment.In medical structure \"Zdrave\" practice doctors with long-standing practice and with proven professional qualities that guarantee high quality and competence of medical care.",
+        "townId": 136
+    },
+    {
+        "name": "MBAl R.Angelova AD",
+        "description": "MBAl R.Angelova AD is located in a central location in the town of Pernik. The hospital with a 110-year history offers its patients from perniška region qualified medical care - advisory, diagnostic, healing and rehabilitation. The hospital is equipped with modern equipment, and for the health of patients is cared.",
+        "townId": 134
+    },
+    {
+        "name": "SBALBB Pernik EOOD",
+        "description": "Specialized hospital for active treatment of lung diseases - Pernik EOOD is located 3 km away from the town of Pernik. The hospital is the successor of the State Lung Hospital, as a consequence of its transformation in 2000 into a sole commercial company",
+        "townId": 134
+    },
+    {
+        "name": "SBALK St. Georgi OOD",
+        "description": "Specialized hospital for active treatment in cardiology St. Georgi  provides for its patients the diagnosis and treatment of cardiovascular diseases by the most modern methods, 24 hours a day. The specialized hospital of cardiology has 28 beds, of which 6 beds for intensive care.",
+        "townId": 134
+    },
+    {
+        "name": "MBAL Avis Medika OOD",
+        "description": "MBAL Avis Medika OOD is located in the park \"Kaylakna\",the yard space of the hospital is 10 decares and has been turned into a recreation park for patients and visitors. On an area of 5000 sq.m are located 14 compartments with a total of 102 beds and 3 laboratories, and in 2009 Another 2,000 sq ft have been unveiled and the bed base has been expanded to another 70 beds.",
+        "townId": 141
+    },
+    {
+        "name": "MBAL St. Paraskeva OOD",
+        "description": "MBAL St. Paraskeva is located in the central part of the town of Pleven. It employs highly qualified specialists from different fields of medicine. The latest methods of treatment and diagnosis are applied, which, combined with modern equipment, provide quality and timely medical care to those in need.",
+        "townId": 141
+    },
+    {
+        "name": "UMBAL St. Marina EAD",
+        "description": "UMBAL St. Marina EAD was established in 2015 according to the model of the most modern specialized hospitals in Western Europe.Technical equipment of the surgeries, operating and resuscitation rooms, lying rooms, as well as the overall interior of the hospital meet the highest standards in this area.",
+        "townId": 141
+    },
+    {
+        "name": "MBAL Pleven(VMA)",
+        "description": " MBAL Pleven at the Military Medical Academy was established in 1903 by decree of King Ferdinand as the Ninth Division Hospital. Its goal then is to take over the medical care of the military from central Northern Bulgaria – a task that the hospital performs to this day.",
+        "townId": 141
+    },
+    {
+        "name": "MBAL St. Pantaleimon OOD",
+        "description": "the team of MBAL St. Pantaleimon OOD consists of established Bulgarian doctors and experienced specialists, some of them professors at the Medical University. Quality orthopedic surgery in the field of endoprosthesing, spinal and endoscopic surgery are some of the fields that the hospital is specialized in.",
+        "townId": 141
+    },
+    {
+        "name": "MBAL St. Ivan Rilski AD",
+        "description": "General Hospital for Active Treatment St. Ivan Rilski AD, Razgrad has existed since 1879. In the hospital are carried out precise medical and diagnostic consultations, requested by all medical institutions for outpatient and hospital care in the Razgrad district and beyond.",
+        "townId": 162
+    },
+    {
+        "name": "UMBAL Kanev AD",
+        "description": "The medical institution provides practical training to students from the professional department \"Medicine\", midwives and nurses. The hospital prepares graduates of 28 specialties for doctors, as well as 2 specialties from the Department of Health Care",
+        "townId": 143
+    },
+    {
+        "name": "UMBAL Medika Ruse OOD",
+        "description": "UMBAL Medika Ruse OOD is a medical institution whose vocation is to provide first-class and easily accessible medical care in a wide range of clinical specialties. The concept of the hospital is based on the combination of the high professionalism of medical professionals with high-tech equipment and modern management to achieve the best results",
+        "townId": 143
+    },
+    {
+        "name": "MBAL Silistra AD",
+        "description": "MBAL Silistra AD is a medical facility for hospital care. The overall activity of the hospital is aimed at retaining its leading place in the field of prevention, diagnostic and healing and rehabilitation activities on the territory of Silistra region.",
+        "townId": 164
+    },
+    {
+        "name": "MBAL St. Petka Bulgarska EOOD",
+        "description": "MBAL St. Petka Bulgarska EOOD, Nova Zagora was established in 1914 as a district hospital, currently, the hospital has a contract with the National Health Insurance Fund and performs hospital activity and activity for long-term treatment and rehabilitation.",
+        "townId": 155
+    },
+    {
+        "name": "MBAL Hadji Dimitar EOOD",
+        "description": "MBAL Hadji Dimitar EOOD is an accredited medical institution for complete medical activity with an \"Excellent\" assessment for a period of 5 years. In the hospital work teams of highly qualified doctors and health care specialists with long experience have proven their professionalism in the field of medicine.",
+        "townId": 140
+    },
+    {
+        "name": "MBAL Sliven(VMA)",
+        "description": "The military hospital in Sliven is the successor to the 3rd Balkan Division Hospital established as early as 1892.The role of The Sliven Hospital is becoming more and more important for the region. Its location is key – from the point of view of novo selo, the air base in Besmer and the port of Burgas.",
+        "townId": 140
+    },
+    {
+        "name": "MBAL D-r Ivan Seliminski AD",
+        "description": "MBAL D-r Ivan Seliminski AD is an established medical facility, with long-lived health care, headquartered in Sliven. The hospital has a new building for the treatment of tuberculosis patients. The hemodialysis blanket is in the newly built building, which is located near the hospital.",
+        "townId": 140
+    },
+    {
+        "name": "MBAL Balchik EOOD",
+        "description": "The strategic objective of MBAL Balchik EOOD is to gain a dominant role in the health services market in the region and to work to occupy new market positions by providing more and better quality medical care, fulfilling the secondary and short-term objectives.",
+        "townId": 107
+    },
+    {
+        "name": "MBAL Dr. A. Peshev EOOD",
+        "description": "MBAL \"Dr. A. Peshev\" - Teteven EOOD occupies an important place in the health care system in Lovech region, directly serves the municipalities of Teeven and Yablanitsa, as well as patients from all over the country, performing high-quality hospital (healing and diagnostic) assistance to persons in need of active treatment.",
+        "townId": 108
+    },
+    {
+        "name": "MBAL Lukovit EOOD",
+        "description": "The medical institution is subject to the activity of diagnosis and treatment of acute and chronic diseases, maternity care, conditions requiring surgical treatment in hospital conditions.The hospital occupies an important place in the health care system in Lovech region.",
+        "townId": 109
+    },
+    {
+        "name": "MBAL Ardino EOOD",
+        "description": "MBAL Ardino EOOD was established in 1959 and occupies an important place in the structure of the health care system in Ardino. 14, 2014 in New Year's Day. The total number of the population served by the hospital is over 21 000 inhabitants, providing inpatient medical care at the level of good medical practice for all patients of the municipality of Ardino and the neighboring municipalities",
+        "townId": 110
+    },
+    {
+        "name": "MBAL Tutrakan EOOD",
+        "description": "MBAL Tutrakan EOOD was established as Tutracan City Hospital, eventually transformed as the District Hospital. Today MBAL Tutrakan EOOD serves the population of the municipalities of Tutrakan and Glavinitsa. More than 5,000 people pass through the medical facility annually.",
+        "townId": 111
+    },
+    {
+        "name": "MBAL Omurtag EAD",
+        "description": "Multi-profile hospital for active treatment - Omurtag EAD is a hospital care facility that carries out activities for diagnosis and treatment of diseases, when the medical purpose cannot be achieved in the conditions of outpatient care, maternity care, rehabilitation, diagnosis and consultation , requested by a doctor or dental practitioner from other medical institutions.",
+        "townId": 112
+    },
+    {
+        "name": "MBAL St. Ivan Rilski EOOD",
+        "description": "The main goal and mission of the hospital is to provide highly qualified diagnostic and medical, inpatient and advisory assistance in all severe and acute diseases or life-threatening conditions of citizens from Elhovska, Bolyarovska, Togolovgrad and other municipalities.",
+        "townId": 113
+    },
+    {
+        "name": "MBAL-Knezha EOOD",
+        "description": "MBAL-Knezha EOOD was established in 1964 as a city hospital with 75 beds. Today the following activities are carried out in the medical institution – diagnosis and treatment of acute diseases, maternity care, rehabilitation, dispensation, diagnostics and consultations requested by a doctor in the following main and or profile specialties: internal medicine, cardiology and other.",
+        "townId": 114
+    },
+    {
+        "name": "SBDPLR Bankya(VMA)",
+        "description": "SBDPLR Bankya at the Military Medical Academy is the successor to the first military sanatorium in Bulgaria, established in 1913. BPP-Bankya has established its name as a first-class medical institution with the professionalism of its medical professionals and the modern conditions it provides to the treaters.",
+        "townId": 115
+    },
+    {
+        "name": "MBAL Troyan EOOD",
+        "description": "Troyan Hospital is one of the largest hospitals for active treatment in Bulgaria. It is located in the city of Troyan and serves not only patients from the city and the area, but also from all over the country. The health institution employs doctors who are specialists with experience in carrying out highly specialized medical activities and health workers with high motivation.",
+        "townId": 116
+    },
+    {
+        "name": "MBAL Prof. Dr. Al. Gerchev EOOD",
+        "description": "MBAL Prof. Dr. Al. Gerchev EOOD is a medical institution for hospital care with 100% municipal property. The hospital has good equipment, providing treatments for diagnosis and treatment of acute diseases, exacerbated chronic diseases, injuries, conditions, conditions for surgical treatment, rehabilitation and physical procedures.",
+        "townId": 117
+    },
+    {
+        "name": "MBAL Mezdra EOOD",
+        "description": "MBAL Mezdra EOOD performs the role of a regional medical institution for inpatient treatment of acute and chronic diseases. The hospital has modern and modern equipment in all areas of medicine: computer tomography (scanner) and mammogram, doppler sonographer, holter, exercise bike, EEG, fibrogastroduodenoscope, rectoscope, etc.",
+        "townId": 118
+    },
+    {
+        "name": "MBAL Isperih EOOD",
+        "description": "Multi-profile hospital for active treatment – Isperih is a medical institution in which doctors with the help of other specialists and support staff carry out activities like diagnosis and treatment of diseases, cardiology, gastroenterology, pulmonology surgery, childhood diseases, nerve diseases, etc.",
+        "townId": 119
+    },
+    {
+        "name": "MBAL Pavlikeni EOOD",
+        "description": "Multi-profile hospital for active treatment – Pavlikeni EOOD carries out diagnostics and active treatment of acute diseases, injuries, exacerbated chronic diseases, conditions requiring surgical treatment, physical therapy and rehabilitation.",
+        "townId": 120
+    },
+    {
+        "name": "MBPLR Stamboliyski EOOD",
+        "description": "MBPLR Stamboliyski EOOD is the successor of the Municipal Hospital, Sofia. Stamboliyski. In the medical institution is carried out rehabilitation and treatment of patients who have diseases of the musculoskeletal system, chronic diseases, patients who require care in order to maintain their mental and physical condition. In the hospital is carried out esographic, laboratory and X-ray diagnostics, rehabilitation, inpatient physical and outpatient medicine, diagnosis and prolonged treatment of neurological diseases.",
+        "townId": 121
+    },
+    {
+        "name": "MBAL Kavarna EOOD",
+        "description": "MBAL Kavarna EOOD is a complex establishment. It has 7 compartments, 54 beds and 87 staff and offers maternity care, treatment of acute diseases, exacerbated chronic diseases, conditions requiring treatment in hospital conditions according to the following basic medical specialties.",
+        "townId": 122
+    },
+    {
+        "name": "MBAL St. Ivan Rilski EOOD",
+        "description": "The hospital in its modern form was opened in 1996 with 50 beds, which subsequently increased to 105 beds with the requirement to provide qualified and effective inpatient care to both energy workers working at Kozloduy Power Station and the population of kozloduy municipality.",
+        "townId": 123
+    },
+    {
+        "name": "MBAL Razlog EOOD",
+        "description": "Multi-profile hospital for active treatment - Razlog EOOD consists of four functionally separated structural blocks: Advisory diagnostic block, Inpatient, Administrative- business block, pharmacy. The bed fund of the hospital is 134 beds. There are 220 posts in the medical establishment, of which: 40 doctors, 110 healthcare professionals and 70 other personnel.",
+        "townId": 125
+    },
+    {
+        "name": "SMDL Microlab EOOD",
+        "description": "SMDL Microlab EOOD is an independent medical diagnostic laboratory located in Kostinbrod. Its activity is based on the Medical Standard of Clinical Microbiology and the rules of good medical practice. With us you can do your clinico-microbiological, virological and parasitological studies.",
+        "townId": 126
+    },
+    {
+        "name": "MBAL Kubrat EOOD",
+        "description": "MBAL Kubrat EOOD provides specialized medical assistance to patients from the Kubrat municipality and neighboring regions. The hospital has a separate neurological, internal, obstetric-gynecological, surgical, pediatric and physiotherapy department with fully renovated equipment and a material and technical base. It has modernly furnished, performing a full set of clinical, pathoanatomical and microbiological laboratories.",
+        "townId": 127
+    },
+    {
+        "name": "MBAL Harmanli EOOD",
+        "description": "The Armandli Hospital is one of the oldest hospitals in Bulgaria. Originating in the years after the Liberation and Unification, its centuries-old trail gives its imprint on the health and social well-being of the population from our end. \"MBAL - Harmanli EOOD\" serves the population of three municipalities: Harmanli, Simeonovgrad, Madzharovo.",
+        "townId": 128
+    },
+    {
+        "name": "MBAL Aytos EOOD",
+        "description": "MBAL Aytos EOOD is a health institution carrying out diagnosis and treatment of diseases on all profiles of medical specialties, treatment of emergency conditions, highly specialized research and consultation of patients from other medical institutions.",
+        "townId": 129
+    },
+    {
+        "name": "MBAL Dr. Atanas Dafovski AD",
+        "description": "MBAL Dr. Atanas Dafovski AD is located in the heart of the Eastern Rhodopes, on both banks of the Arda River, between two dams. The hospital has modern medical equipment and equipment – CT, MRI, video endoscopic system, 4D echograph, angiograph and hall for invasive cardiology, etc.The medical institution has a opened Medical Center, where outpatient medical examinations and examinations are carried out.",
+        "townId": 130
+    },
+    {
+        "name": "MBAL Yoan Rilski OOD",
+        "description": "MBAL Yoan Rilski OOD was established in 2008. The hospital provides medical assistance in the treatment of acute and chronic diseases, injuries and conditions requiring surgical treatment. It has six operating rooms with its own installation to purify the air through bacterial filters. Here surgical interventions are performed on the gastrointestinal tract, biliary-hepatic region, perianal space, appendicitis, hernia, benign formations of the mammary gland, etc.",
+        "townId": 135
+    },
+    {
+        "name": "MBAl St. Panteleimon AD",
+        "description": "In the hospital departments people strive to provide comprehensive medical, nursing, therapeutic and psychosocial assistance through an orderly and reasonable use of available resources and applying the basic principle of continuity of our work. Currently, the hospital operates with a total of 534 persons, including 109 doctors and 238 nursing staff.",
+        "townId": 135
+    },
+    {
+        "name": "Hospital of Cardiology Yambol",
+        "description": "Hospital of Cardiology, Yambol is a specialized hospital for the treatment of cardiovascular diseases.It has the following third level of competence departments, in accordance with medical standards – Department of General Cardiology, Intensive Cardiology Department, Non-Invasive Diagnostics Department, Department of Invasive Cardiology and Cardiostimulation, Clinical Laboratory.",
+        "townId": 135
+    },
+    {
+        "name": "MBAL Haskovo AD",
+        "description": "Multi-profile hospital for active treatment in the city of Haskovo performs the whole range of medical activities for hospital care facilities at the regional level and provides very good quality of the health services provided.The mission of the medical institution is to provide quality and affordable inpatient care aimed at diagnosing and actively treating, restoring and strengthening the health of the population.",
+        "townId": 137
+    },
+    {
+        "name": "MBAL Higia Haskovo EOOD",
+        "description": "MBAL Higia EOOD is a private medical institution on the territory of Haskovo.Modern healthcare facility that offers qualified hospital diagnostic and medical care to those in need of active treatment. A team of qualified medical professionals with possessions applies the usual and latest technologies and methodologies in hospital activity.",
+        "townId": 137
+    },
+    {
+        "name": "SBALO Haskovo EOOD",
+        "description": "SBALO Haskovo EOOD is the only medical institution in Haskovo and Kardzhali region providing comprehensive assistance in the organization, management and implementation of prevention, active search, early diagnosis, complex treatment, periodic monitoring, palliative treatment and improvement of the quality of life of patients with malignancies and pre-cancers.",
+        "townId": 137
+    },
+    {
+        "name": "MBAL Shumen AD",
+        "description": "MBAL Shumen AD provides 24-hour readiness and conducting modern analgesia of surgical interventions and painful procedures, as well as intensive treatment of seriously ill and sick after expanded operational interventions. The department has modern equipment and highly qualified specialists, ensuring 24-7 readiness to manage life-threatening conditions.",
+        "townId": 138
+    },
+    {
+        "name": "UMBAL Prof. Dr. St. Kirkovich AD",
+        "description": "The medical institution serves the population of Stara Zagora Region equal to about 382 000 and structured in 11 municipalities: Stara Zagora, Kazanlak, Chirpan, Galabovo, Pavel Banya, Opan, Maglizh, Gurkovo, Nikolaevo, Radnevo and Bratya Daskalovi, and in – a number of specialties – neonatology, pediatric orthopedics, infectious and pediatric infectious diseases, neurosurgery and cardiology is also of interregular importance.",
+        "townId": 142
+    },
+    {
+        "name": "MBAL Niamed OOD",
+        "description": "MBAL Niamed OOD is a modern six-storey building designed specifically for a hospital that meets all European standards - warm and soundproofing, central ventilation and air conditioning, gasification. LeaMed Hospital will serve a highly qualified team of doctors and health care professionals. With us you will find professionalism, comfortable environment, personalized attitude and care.",
+        "townId": 142
+    },
+    {
+        "name": "MBAL Trakia EOOD",
+        "description": "MBAL Trakia EOOD is one of the largest and most modern hospitals in Bulgaria, equipped with high-tech medical equipment of the last generation. The health institution employs highly qualified specialists in the field of surgery, cardiology, gynecology, urology, neurology and others.The hospital is located in two buildings. The first building was opened in February 2009 and is located in the central urban part of Stara Zagora. The second building was opened in April 2014 and is positioned above the Beroe Stadium",
+        "townId": 142
+    },
+    {
+        "name": "MBAL Dr. Nikola Vasiliev AD",
+        "description": "The hospital holds a permit issued by the Minister of Health for carrying out the following healing activities: diagnosis and treatment of diseases, diagnostics and consultations, maternity care, rehabilitation, medical and cosmetic services, clinical trials of medicines and medical equipment, in accordance with the legislation in force in the country under the main medical specialties.",
+        "townId": 147
+    },
+    {
+        "name": "MBAL Asenovgrad EOOD",
+        "description": "BAL Asenovgrad EOOD is a large hospital, which includes an administrative-business block, an advisory and diagnostic block with a clinical laboratory, an emergency department and an inpatient block. The following healing activities are carried out in the hospital: Diagnosis and treatment of acute diseases, injuries, exacerbated chronic diseases, conditions requiring surgical treatment and other.",
+        "townId": 149
+    },
+    {
+        "name": "MBAL Sv. Ivan Chudotvorets EOOD",
+        "description": "MBAL Sv. Ivan Chudotvorets EOOD serves the population of the municipalities of Lom, Valchedrum, Yakimovo, Medkovets and Brusartsi. An average of about 12,000 patients pass through the hospital annually, outpatient examinations are about 10,000. The medical institution has modern diagnostic equipment, including spiral scanner, echocardiograph, fibrocolonoscope, fibrogastroscope, mammograph and other.",
+        "townId": 151
+    },
+    {
+        "name": "MBAL Dr. Stoicho Hristov EOOD",
+        "description": "The hospital has existed since 1879 as the Sevliev District Secondary Hospital.The hospital performs diagnostics and active treatment of acute and chronic exacerbated diseases, traumas, urgent and planned operational interventions on the following main medical specialties: internal medicine, cardiology, pneumo-phthysiatrics, gastroenterology, nephrology and other.",
+        "townId": 152
+    },
+    {
+        "name": "MBAL Zdrave EOOD",
+        "description": "MBAL Zdrave EOOD has been operating since 2008. It consists of: DIAGNOSTIC CONSULTING BLOCK, including reception and advisory rooms, STATIONARY BLOCK – with six wards, with a total of 154 beds, GENERAL AND CLINICAL PATHOLOGY DEPARTMENT, CLINICAL LABORATORY,  ADMINISTRATIVE-ECONOMIC, BLOCK Medical diagnostic tests (microbiological, imaging, pathohistological and clinician laboratory) are carried out under contract with DC I Velingrad EOOD, which is located on the territory of the hospital.",
+        "townId": 153
+    },
+    {
+        "name": "MBAL Dr. Kiro Popov EOOD",
+        "description": "is a medical institution for hospital care with a leading role in the field of diagnostic – healing, rehabilitation and prophylactic activity on the territory of Karlovska Municipality and parts of the municipalities of Hisar, Brezovo and Kaloyanovo. The hospital performs diagnostics and active treatment of acute and chronic diseases, injuries, urgent and planned operational interventions.",
+        "townId": 154
+    },
+    {
+        "name": "MBAL Samokov EOOD",
+        "description": "Multi-profile hospital for active treatment - Samokov was founded in 1878. It is the largest medical facility in the health structure in Sofia Region and has 233 beds distributed in 11 wards , 3 wards without beds and2 paraclinical units . 57 doctors, 116 medical professionals and 111 other staff are cared for.",
+        "townId": 156
+    },
+    {
+        "name": "MBAL Sandanski EOOD",
+        "description": "MBAL Sandanski EOOD is a multi-profile Hospital for active treatment with territorial scope, but also with the prospect of attracting patients with acute diseases from other regions and areas of Bulgaria (treatment of acute or exacerbation diseases of the cardiovascular system).",
+        "townId": 157
+    },
+    {
+        "name": "MBAL Dr. Bratan Shukerov EOOD",
+        "description": "MBAL Dr. Bratan Shukerov EOOD has a modern material and technical base, with all necessary hospital and auxiliary units for modern medical activity. It provides highly specialized medical care to patients from Smolyan region, tourists who have visited the region, as well as to residents of neighboring areas. At The Hospital-Smolyan is carried out diagnosis and treatment of acute and chronic exacerbated diseases, injuries, urgent and planned operational interventions.",
+        "townId": 158
+    },
+    {
+        "name": "MBAL Dr. Dimitar Pavlovich EOOD",
+        "description": "MBAL Dr. Dimitar Pavlovich EOOD was founded in 1879. The medical institution provides quality health care, treatment and prevention of patients from Svishtov region and the surrounding area. It has modern equipment and furniture, as well as specialists from different fields of medicine. Doctors are highly qualified and do not stop building on their skills and knowledge.",
+        "townId": 159
+    },
+    {
+        "name": "MBAL St. Ivan Rilski EOOD",
+        "description": "In MBAL St. Ivan Rilski EOOD work 8 doctors, of which 2 with a specialty in internal medicine, 2 with specialty internal diseases and gastroenterology, 1 with specialty internal diseases and nephrology, 1 with specialty gastroenterology, 1 doctor without a specialty, 1 resident and 11 nurses",
+        "townId": 160
+    },
+    {
+        "name": "SBR Petrich EOOD",
+        "description": "The hospital has 39 rooms, each with its own bathroom, cable TV, air conditioning, Wi-Fi in all public areas. In SBR Petrich has all the necessary conditions for your treatment and rehabilitation, we have highly specialized medical staff and medical equipment. It features free parking, an outdoor pool and a gym for its patients.",
+        "townId": 161
+    },
+    {
+        "name": "MBAL St. Ekaterina EOOD",
+        "description": "MBAL St. Ekaterina EOOD is a medical institution for the implementation of hospital medical care, following invariably its mission consisting in providing quality and affordable hospital care to patients with acute diseases or exacerbations chronic ones according to the profile of the revealed specialties, contributing to the restoration and strengthening of the health of the population, lowering the morbidity and improving the quality of life of patients and their loved ones.",
+        "townId": 165
+    },
+    {
+        "name": "MBAL Targovishte OD",
+        "description": "Multi-profile hospital for active treatment – Targovishte AD is a medical institution for hospital care, which carries out its activities in strict compliance with the requirements of the Medical Institutions Act, the Commercial Act and other current regulations.",
+        "townId": 166
+    },
+    {
+        "name": "MBAL Dr. Hr. Stamboliyski EOOD",
+        "description": "The hospital is multi-profile curative institution with subject of activity: diagnostics, treatment and rehabilitation of acute, acute chronic, traumatologic diseases and maternity help; statuses, demanding operative treatment in hospital conditions.",
+        "townId": 168
+    },
+    {
+        "name": "MBAL St. Ivan Rilski EOOD",
+        "description": "MBAL St. Ivan Rilski EOOD is a medical institution for hospital care. The hospital offers quality and affordable hospital care aimed at restoring and strengthening the health of the population. he main objectives and tasks are consistent with the National Health Strategy and the National Health Policy, the public interests and health needs of the population.",
+        "townId": 169
+    },
+    {
+        "name": "MBAL Dr. Teodosi Vitanov EOOD",
+        "description": "The hospital has six inpatient wards with a total of 75 hospital beds, a modern clinical laboratory, a microbiological laboratory, a pathomorphological laboratory and a department of imaging, reception rooms, an administrative- business block and a hospital pharmacy . The hospital employs 26 highly qualified doctors with one and two medical specialties and the total staffing number is 104 people. \"Dr. Theodosi Vitonov\" Hospital EOOD has a contract with RZOK-Gabrovo on the profile of the hospital.",
+        "townId": 170
+    },
+    {
+        "name": "MBAL Veliki Preslav EOOD",
+        "description": "Registered as an independent legal entity on 12.09.2000. The owner of 100% of the capital of the hospital is the municipality. The activity of the hospital is : diagnosis and treatment of extremely acute, acute and exacerbated chronic diseases of a therapeutic, neurological and psychiatric nature, rehabilitation, medical services, etc. All the urgently ill and those whose condition does not allow treatment in a home setting are treated.",
+        "townId": 258
+    }
+]

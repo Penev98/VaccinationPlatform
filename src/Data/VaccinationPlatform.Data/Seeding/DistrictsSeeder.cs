@@ -8,7 +8,7 @@
     using System.Threading.Tasks;
     using VaccinationPlatform.Data.Models;
 
-    public class DistrictSeeder : ISeeder
+    public class DistrictsSeeder : ISeeder
     {
         // District name is at the 5th index in the scv line
         private const int DistrictNameIndex = 5;
@@ -16,7 +16,7 @@
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
                                                          // TODO: Use a relative path
-            string input = await File.ReadAllTextAsync(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\DsitrictsAandTowns.csv");
+            string input = await File.ReadAllTextAsync(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\SeedData\districtsAndTowns.csv");
             string[] infoLine = input.Split("\r\n");
 
             for (int i = 0; i < infoLine.Length; i++)

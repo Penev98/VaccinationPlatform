@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Chickenpox (Varicella)",
+    "information": "Chickenpox is a very contagious disease caused by the varicella-zoster virus (VZV). It causes a blister-like rash, itching, tiredness, and fever. Chickenpox used to be very common in the United States. Each year, chickenpox caused about 4 million cases, about 10,600 hospitalizations and 100 to 150 deaths."
+  },
+  {
+    "name": "Diphtheria",
+    "information": "Diphtheria is an infection caused by the bacterium Corynebacterium diphtheriae. Signs and symptoms may vary from mild to severe. They usually start two to five days after exposure. Symptoms often come on fairly gradually, beginning with a sore throat and fever."
+  },
+  {
+    "name": "Flu (Influenza)",
+    "information": "Influenza (flu) is a contagious respiratory illness caused by influenza viruses that infect the nose, throat, and lungs. It can cause mild to severe illness, and can lead to hospitalization and death. Every year millions of people are sickened, hundreds of thousands are hospitalized and thousands or tens of thousands of people die from the flu."
+  },
+  {
+    "name": "Hepatitis A",
+    "information": "Hepatitis A is a liver disease caused by the hepatitis A virus (HAV). Hepatitis A can affect anyone. Vaccines are available for long-term prevention of HAV infection in persons 1 year of age and older. Good personal hygiene and proper sanitation can also help prevent the spread of hepatitis A."
+  },
+  {
+    "name": "Hepatitis B",
+    "information": "Hepatitis B is an infectious disease caused by the hepatitis B virus (HBV) that affects the liver; it is a type of viral hepatitis. It can cause both acute and chronic infection. Many people have no symptoms during the initial infection. In acute infection, some may develop a rapid onset of sickness with vomiting, yellowish skin, tiredness, dark urine, and abdominal pain. "
+  },
+  {
+    "name": "Polio (Poliomyelitis)",
+    "information": "Poliomyelitis, commonly shortened to polio, is an infectious disease caused by the poliovirus. In about 0.5 percent of cases, it moves from the gut to affect the central nervous system and there is muscle weakness resulting in a flaccid paralysis. This can occur over a few hours to a few days. The weakness most often involves the legs, but may less commonly involve the muscles of the head, neck and diaphragm."
+  },
+  {
+    "name": "Tetanus (Lockjaw)",
+    "information": "Tetanus, also known as lockjaw, is a bacterial infection characterized by muscle spasms. In the most common type, the spasms begin in the jaw and then progress to the rest of the body. Each spasm usually lasts a few minutes. Spasms occur frequently for three to four weeks. Some spasms may be severe enough to fracture bones."
+  },
+  {
+    "name": "Rotavirus",
+    "information": "Rotavirus is a genus of double-stranded RNA viruses in the family Reoviridae. Rotaviruses are the most common cause of diarrhoeal disease among infants and young children. Nearly every child in the world is infected with a rotavirus at least once by the age of five. Immunity develops with each infection, so subsequent infections are less severe; adults are rarely affected."
+  },
+  {
+    "name": "Meningococcal",
+    "information": "Meningococcal disease describes infections caused by the bacterium Neisseria meningitidis. It has a high mortality rate if untreated but is vaccine-preventable. While best known as a cause of meningitis, it can also result in sepsis, which is an even more damaging and dangerous condition. Meningitis and meningococcemia are major causes of illness, death, and disability in both developed and under-developed countries."
+  },
+  {
+    "name": "Coronavirus (COVID-19)",
+    "information": "Coronavirus disease 2019 (COVID-19) is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). Symptoms of COVID-19 are variable, but often include fever, cough, headache, fatigue, breathing difficulties, and loss of smell and taste. Symptoms may begin one to fourteen days after exposure to the virus. At least a third of people who are infected do not develop noticeable symptoms."
+  }
+]
