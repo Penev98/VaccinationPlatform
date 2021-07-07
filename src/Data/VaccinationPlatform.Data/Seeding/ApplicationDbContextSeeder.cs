@@ -25,19 +25,24 @@
 
             var seeders = new List<ISeeder>
                           {
+                               // Uncomment if you start the app for the first time -> the first start will seed the data in the database
+
                               // new RolesSeeder(),
                               // new DistrictSeeder(),
                               // new TownSeeder(),
                               // new HospitalsSeeder(),
                               // new DiseasesSeeder(),
-                              new VaccinesSeeder(),
+                              // new VaccinesSeeder(),
                           };
 
-            foreach (var seeder in seeders)
+            if (seeders.Count > 0)
             {
-                await seeder.SeedAsync(dbContext, serviceProvider);
-                await dbContext.SaveChangesAsync();
-                logger.LogInformation($"Seeder {seeder.GetType().Name} done.");
+                foreach (var seeder in seeders)
+                {
+                    await seeder.SeedAsync(dbContext, serviceProvider);
+                    await dbContext.SaveChangesAsync();
+                    logger.LogInformation($"Seeder {seeder.GetType().Name} done.");
+                }
             }
         }
     }

@@ -7,7 +7,7 @@
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
 
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
 
     <script src="https://kit.fontawesome.com/93ab6c6aca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/custom.css" />
@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <div class="jumbotron mb-0">
+        <div class="jumbotron mb-0 ">
             <div class="container text-center">
                 <h1>Book your place now</h1>
                 <p>Easy and fast to use platform for vaccination</p>
@@ -41,6 +41,8 @@
                         <li><a asp-controller="Locations" asp-action="Index">Locations</a></li>
                         <li><a asp-controller="Home" asp-action="About">About</a></li>
                         <li><a asp-controller="Home" asp-action="MedicalInfo">Medical Info</a></li>
+                        <li><a asp-controller="Booking" asp-action="BookApointment">Book an apointment</a></li>
+
                     </ul>
 
                     @if (User.Identity.IsAuthenticated)

@@ -38,5 +38,16 @@ main{
     margin-bottom:10px !important;
 }
 .locations{
-  color:darkgrey !important;
+  color:darkgray !important;
+}
+h1.locations{
+    margin-top: 1px !important;
+    margin-bottom : 50px !important; 
+}
+
+#sendButton{
+    margin-top: 10px !important;
+}
+.validation{
+    color:red;
 }
