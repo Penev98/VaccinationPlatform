@@ -7,27 +7,48 @@
 
     using Microsoft.AspNetCore.Mvc;
     using VaccinationPlatform.Services.Data;
+    using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Web.ViewModels.InputModels;
 
     public class BookingController : BaseController
     {
         private readonly IGetAllService getAll;
+        private readonly IBookingService bookingService;
 
-        public BookingController(IGetAllService getAll)
+        public BookingController(IGetAllService getAll, IBookingService bookingService)
         {
             this.getAll = getAll;
+            this.bookingService = bookingService;
         }
+
         public IActionResult BookApointment()
         {
             BookingModel model = new BookingModel();
             model.Districts = this.getAll.GetDistricts();
-            return this.View();
+            model.Towns = this.getAll.GetTowns();
+            model.Hospitals = this.getAll.GetHospitals();
+            model.Diseases = this.getAll.GetDiseases();
+            model.Vaccines = this.getAll.GetVaccines();
+            model.BookingDate = DateTime.UtcNow;
+
+            return this.View(model);
         }
 
-        //[System.Web.Mvc.HttpPost]
-        //public async Task<IActionResult> BookApointment(BookingModel bookingModel)
-        //{
-        //    return this.Redirect("/");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> BookApointment(BookingModel bookingModel)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
+            }
+
+            await this.bookingService.CreateBookingAsync(bookingModel);
+            return this.RedirectToAction("SuccesfullBooking");
+        }
+
+        public IActionResult SuccesfullBooking()
+        {
+            return this.View();
+        }
     }
 }

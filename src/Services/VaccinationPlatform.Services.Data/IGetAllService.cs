@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using VaccinationPlatform.Data.Models;
-
-namespace VaccinationPlatform.Services.Data
+﻿namespace VaccinationPlatform.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using VaccinationPlatform.Data.Models;
+
     public interface IGetAllService
     {
-        public IEnumerable<KeyValuePair<string , string>> GetDistricts();
+        public IEnumerable<KeyValuePair<string, string>> GetDistricts();
 
         public IEnumerable<KeyValuePair<string, string>> GetTowns();
 

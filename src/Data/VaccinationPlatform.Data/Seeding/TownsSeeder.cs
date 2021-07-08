@@ -19,7 +19,7 @@ namespace VaccinationPlatform.Data.Seeding
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
                                                             // TODO: Use a relative path
-            string input = await File.ReadAllTextAsync(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\SeedData\districtsAndTowns.csv");
+            string input = await File.ReadAllTextAsync(@"..\..\Data\VaccinationPlatform.Data\Seeding\SeedData\districtsAndTowns.csv");
             string[] infoLine = input.Split("\r\n");
 
             for (int i = 0; i < infoLine.Length; i++)

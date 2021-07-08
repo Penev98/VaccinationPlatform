@@ -29,7 +29,6 @@
         {
             var diseases = this.diseasesRepo.AllAsNoTracking()
                 .Select(x => new { x.Id, x.Name })
-                .Take(10)
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
@@ -38,18 +37,19 @@
 
         public IEnumerable<KeyValuePair<string, string>> GetDistricts()
         {
-            var districts = this.districtsRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
-                .Take(10)
-                .ToList()
-                .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
+            return this.districtsRepo.AllAsNoTracking()
+               .Select(x => new
+               {
+                   x.Id,
+                   x.Name,
+               }).Take(27).ToList().Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
-            return districts;
         }
 
         public IEnumerable<KeyValuePair<string, string>> GetHospitals()
         {
-            var hospitals = this.hospitalsRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
-                .Take(10)
+            var hospitals = this.hospitalsRepo.AllAsNoTracking().Where(x => x.TownId != 89).Select(x => new { x.Id, x.Name })
+                .Take(50)
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
@@ -59,7 +59,7 @@
         public IEnumerable<KeyValuePair<string, string>> GetTowns()
         {
             var towns = this.townsRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
-                .Take(10)
+                .Take(50)
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
@@ -69,7 +69,6 @@
         public IEnumerable<KeyValuePair<string, string>> GetVaccines()
         {
             var vaccines = this.vaccinesRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
-                .Take(10)
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 

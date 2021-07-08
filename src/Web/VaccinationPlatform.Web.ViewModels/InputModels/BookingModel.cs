@@ -8,32 +8,30 @@
 
     public class BookingModel
     {
-        // public int DistrictId { get; set; }
-
-        // public int TownId { get; set; }
-
-        // public int HospitalId { get; set; }
-
-        // public int DiseaseId { get; set; }
-
-        // public int VaccineId { get; set; }
-
         [Required]
+        public int DistrictId { get; set; }
+
         public IEnumerable<KeyValuePair<string, string>> Districts { get; set; }
 
-        public string District { get; set; }
+        [Required]
+        public int TownId { get; set; }
+
+        public IEnumerable<KeyValuePair<string, string>> Towns { get; set; }
 
         [Required]
-        public string Town { get; set; }
+        public int HospitalId { get; set; }
+
+        public IEnumerable<KeyValuePair<string, string>> Hospitals { get; set; }
 
         [Required]
-        public string Hospital { get; set; }
+        public int DiseaseId { get; set; }
+
+        public IEnumerable<KeyValuePair<string, string>> Diseases { get; set; }
 
         [Required]
-        public string Disease { get; set; }
+        public int VaccineId { get; set; }
 
-        [Required]
-        public string Vaccine { get; set; }
+        public IEnumerable<KeyValuePair<string, string>> Vaccines { get; set; }
 
         [Display(Name = "Date of Booking")]
         [Required]

@@ -14,7 +14,7 @@
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
-            var diseaseDtos = JsonSerializer.Deserialize<List<DiseaseDto>>(File.ReadAllText(@"D:\repos\test\src\Data\VaccinationPlatform.Data\Seeding\SeedData\diseases.json"));
+            var diseaseDtos = JsonSerializer.Deserialize<List<DiseaseDto>>(File.ReadAllText(@"..\..\Data\VaccinationPlatform.Data\Seeding\SeedData\diseases.json"));
 
             foreach (var dto in diseaseDtos)
             {

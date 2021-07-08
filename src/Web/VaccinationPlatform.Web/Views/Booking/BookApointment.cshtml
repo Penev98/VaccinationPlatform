@@ -1,21 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Book an Appointment";
 }
-
 @model VaccinationPlatform.Web.ViewModels.InputModels.BookingModel
-@Model 
 
-@{ 
-    IEnumerable<SelectListItem> districts;
-
-    if (this.Model.Districts.Count > 0)
-    {
-        districts = this.Model.Districts.Select(x => new SelectListItem(x.Name, x.Name));
-    }
-    else
-    {
-        districts = new List<SelectListItem>() { new SelectListItem() { Text = "No districts", Value = "0" } };
-    }
+@{
+    var districts = this.Model.Districts.Select(x => new SelectListItem(x.Value, x.Key));
+    var towns = this.Model.Towns.Select(x => new SelectListItem(x.Value, x.Key));
+    var hospitals = this.Model.Hospitals.Select(x => new SelectListItem(x.Value, x.Key));
+    var diseases = this.Model.Diseases.Select(x => new SelectListItem(x.Value, x.Key));
+    var vaccines = this.Model.Vaccines.Select(x => new SelectListItem(x.Value, x.Key));
 
 }
 <h1 class="locations">@ViewData["Title"]</h1>
@@ -23,32 +16,29 @@
 <form method="post" class="col-md-4">
     <div class="validation" asp-validation-summary="All"></div>
     <div class="form-group">
-        <label class="locations" asp-for="District">Select District</label>
-        <select class="form-control" asp-for="District" asp-items="districts">
-           
-        </select>
-        @*<input class="form-control" asp-for="District" />*@
-        <span class="validation" asp-validation-for="District"></span>
+        <label class="locations" asp-for="DistrictId">Select District</label>
+        <select class="form-control" asp-for="DistrictId" asp-items="districts"></select>
+        <span class="validation" asp-validation-for="DistrictId"></span>
     </div>
     <div class="form-group">
-        <label class="locations" asp-for="Town">Select Town</label>
-        <input class="form-control" asp-for="Town" />
-        <span class="validation" asp-validation-for="Town"></span>
+        <label class="locations" asp-for="TownId">Select Town</label>
+        <select class="form-control" asp-for="TownId" asp-items="towns"></select>
+        <span class="validation" asp-validation-for="TownId"></span>
     </div>
     <div class="form-group">
-        <label class="locations" asp-for="Hospital">Select Hospital</label>
-        <input class="form-control" asp-for="Hospital" />
-        <span class="validation" asp-validation-for="Hospital"></span>
+        <label class="locations" asp-for="HospitalId ">Select Hospital</label>
+        <select class="form-control" asp-for="HospitalId" asp-items="hospitals"></select>
+        <span class="validation" asp-validation-for="HospitalId"></span>
     </div>
     <div class="form-group">
-        <label class="locations" asp-for="Disease">Select Disease</label>
-        <input class="form-control" asp-for="Disease" />
-        <span class="validation" asp-validation-for="Disease"></span>
+        <label class="locations" asp-for="DiseaseId">Select Disease</label>
+        <select class="form-control" asp-for="DiseaseId" asp-items="diseases"></select>
+        <span class="validation" asp-validation-for="DiseaseId"></span>
     </div>
     <div class="form-group">
-        <label class="locations" asp-for="Vaccine">Select Vaccine</label>
-        <input class="form-control" asp-for="Vaccine" />
-        <span class="validation" asp-validation-for="Vaccine"></span>
+        <label class="locations" asp-for="VaccineId">Select Vaccine</label>
+        <select class="form-control" asp-for="VaccineId" asp-items="vaccines"></select>
+        <span class="validation" asp-validation-for="VaccineId"></span>
     </div>
     <div class="form-group">
         <label class="locations" asp-for="BookingDate">Select Date</label>
@@ -60,7 +50,7 @@
         <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
     </div>
 
-    
+
 
     <input type="submit" id="sendButton" class="btn btn-success" />
 </form>

@@ -48,6 +48,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Booking\SuccesfullBooking.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\Home\About.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -30,9 +30,10 @@
                               // new RolesSeeder(),
                               // new DistrictSeeder(),
                               // new TownSeeder(),
-                              // new HospitalsSeeder(),
-                              // new DiseasesSeeder(),
-                              // new VaccinesSeeder(),
+                               // new HospitalsSeeder(),
+
+                               // new DiseasesSeeder(),
+                               // new VaccinesSeeder(),
                           };
 
             if (seeders.Count > 0)

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\VaccinationPlatform.Data.Common\VaccinationPlatform.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\VaccinationPlatform.Data.Models\VaccinationPlatform.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\VaccinationPlatform.Web.ViewModels\VaccinationPlatform.Web.ViewModels.csproj" />
     <ProjectReference Include="..\VaccinationPlatform.Services.Mapping\VaccinationPlatform.Services.Mapping.csproj" />
   </ItemGroup>
 
