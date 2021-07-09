@@ -25,10 +25,11 @@
         {
             BookingModel model = new BookingModel();
             model.Districts = this.getAll.GetDistricts();
-            model.Towns = this.getAll.GetTowns();
-            model.Hospitals = this.getAll.GetHospitals();
-            model.Diseases = this.getAll.GetDiseases();
-            model.Vaccines = this.getAll.GetVaccines();
+
+            // model.Towns = this.getAll.GetTowns();
+            // model.Hospitals = this.getAll.GetHospitals();
+            // model.Diseases = this.getAll.GetDiseases();
+            // model.Vaccines = this.getAll.GetVaccines();
             model.BookingDate = DateTime.UtcNow;
 
             return this.View(model);
@@ -42,8 +43,38 @@
                 return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
             }
 
-            await this.bookingService.CreateBookingAsync(bookingModel);
+            // await this.bookingService.CreateBookingAsync(bookingModel);
             return this.RedirectToAction("SuccesfullBooking");
+        }
+
+        [HttpGet]
+        public JsonResult GetAllDistrictsAjax()
+        {
+            return this.Json(this.getAll.GetDistricts());
+        }
+
+        [HttpGet]
+        public JsonResult GetTownsByDistrictAjax(int districtId)
+        {
+            return this.Json(this.getAll.GetTownsByDistrict(districtId));
+        }
+
+        [HttpGet]
+        public JsonResult GetHospitalsByTownAjax(int townId)
+        {
+            return this.Json(this.getAll.GetHospitalsByTown(townId));
+        }
+
+        [HttpGet]
+        public JsonResult GetAllDiseasesAjax()
+        {
+            return this.Json(this.getAll.GetDiseases());
+        }
+
+        [HttpGet]
+        public JsonResult GetVaccinesByDiseaseAjax(int diseaseId)
+        {
+            return this.Json(this.getAll.GetVaccinesByDisease(diseaseId));
         }
 
         public IActionResult SuccesfullBooking()

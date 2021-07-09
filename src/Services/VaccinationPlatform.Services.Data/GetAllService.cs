@@ -43,32 +43,35 @@
                    x.Id,
                    x.Name,
                }).Take(27).ToList().Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
-
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetHospitals()
+        public IEnumerable<KeyValuePair<string, string>> GetHospitalsByTown(int townId)
         {
-            var hospitals = this.hospitalsRepo.AllAsNoTracking().Where(x => x.TownId != 89).Select(x => new { x.Id, x.Name })
-                .Take(50)
+            var hospitals = this.hospitalsRepo.AllAsNoTracking()
+                .Where(x => x.TownId != 89 && x.TownId == townId) // Town with ID 89 is a test town
+                .Select(x => new { x.Id, x.Name })
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
             return hospitals;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetTowns()
+        public IEnumerable<KeyValuePair<string, string>> GetTownsByDistrict(int districtId)
         {
-            var towns = this.townsRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
-                .Take(50)
+            var towns = this.townsRepo.AllAsNoTracking()
+                .Where(x => x.Id != 89 && x.DistrictId == districtId)
+                .Select(x => new { x.Id, x.Name })
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 
             return towns;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetVaccines()
+        public IEnumerable<KeyValuePair<string, string>> GetVaccinesByDisease(int diseaseId)
         {
-            var vaccines = this.vaccinesRepo.AllAsNoTracking().Select(x => new { x.Id, x.Name })
+            var vaccines = this.vaccinesRepo.AllAsNoTracking()
+                .Where(x => x.DiseaseId == diseaseId)
+                .Select(x => new { x.Id, x.Name })
                 .ToList()
                 .Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
 

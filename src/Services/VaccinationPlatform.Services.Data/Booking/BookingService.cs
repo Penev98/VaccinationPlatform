@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using VaccinationPlatform.Data.Common.Repositories;
-using VaccinationPlatform.Web.ViewModels.InputModels;
-
-namespace VaccinationPlatform.Services.Data.Booking
+﻿namespace VaccinationPlatform.Services.Data.Booking
 {
-   public class BookingService : IBookingService
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using VaccinationPlatform.Data.Common.Repositories;
+    using VaccinationPlatform.Web.ViewModels.InputModels;
+
+    public class BookingService : IBookingService
     {
         private readonly IDeletableEntityRepository<VaccinationPlatform.Data.Models.Booking> bookingRepo;
 

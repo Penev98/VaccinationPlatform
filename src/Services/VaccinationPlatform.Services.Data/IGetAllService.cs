@@ -10,13 +10,13 @@
     {
         public IEnumerable<KeyValuePair<string, string>> GetDistricts();
 
-        public IEnumerable<KeyValuePair<string, string>> GetTowns();
+        public IEnumerable<KeyValuePair<string, string>> GetTownsByDistrict(int districtId);
 
-        public IEnumerable<KeyValuePair<string, string>> GetHospitals();
+        public IEnumerable<KeyValuePair<string, string>> GetHospitalsByTown(int townId);
 
         public IEnumerable<KeyValuePair<string, string>> GetDiseases();
 
-        public IEnumerable<KeyValuePair<string, string>> GetVaccines();
+        public IEnumerable<KeyValuePair<string, string>> GetVaccinesByDisease(int diseaseId);
 
     }
 }

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VaccinationPlatform.Services.Data.DataTransferObjects
+﻿namespace VaccinationPlatform.Services.Data.DataTransferObjects
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class BookingDto
     {
         public int DistrictId { get; set; }

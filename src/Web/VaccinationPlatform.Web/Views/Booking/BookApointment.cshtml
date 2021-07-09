@@ -1,43 +1,36 @@
-﻿@{
+﻿<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+@{
     ViewData["Title"] = "Book an Appointment";
 }
 @model VaccinationPlatform.Web.ViewModels.InputModels.BookingModel
 
-@{
-    var districts = this.Model.Districts.Select(x => new SelectListItem(x.Value, x.Key));
-    var towns = this.Model.Towns.Select(x => new SelectListItem(x.Value, x.Key));
-    var hospitals = this.Model.Hospitals.Select(x => new SelectListItem(x.Value, x.Key));
-    var diseases = this.Model.Diseases.Select(x => new SelectListItem(x.Value, x.Key));
-    var vaccines = this.Model.Vaccines.Select(x => new SelectListItem(x.Value, x.Key));
-
-}
 <h1 class="locations">@ViewData["Title"]</h1>
 
 <form method="post" class="col-md-4">
     <div class="validation" asp-validation-summary="All"></div>
     <div class="form-group">
         <label class="locations" asp-for="DistrictId">Select District</label>
-        <select class="form-control" asp-for="DistrictId" asp-items="districts"></select>
+        <select id="selectDist" class="form-control" onmousedown="GetAllDistricts()" onchange="GetTownsByDistrict();"  asp-for="DistrictId"></select>
         <span class="validation" asp-validation-for="DistrictId"></span>
     </div>
     <div class="form-group">
-        <label class="locations" asp-for="TownId">Select Town</label>
-        <select class="form-control" asp-for="TownId" asp-items="towns"></select>
+        <label  class="locations" asp-for="TownId">Select Town</label>
+        <select id="selectTown" class="form-control" onchange="GetHospitalsByTown()" asp-for="TownId"></select>
         <span class="validation" asp-validation-for="TownId"></span>
     </div>
     <div class="form-group">
         <label class="locations" asp-for="HospitalId ">Select Hospital</label>
-        <select class="form-control" asp-for="HospitalId" asp-items="hospitals"></select>
+        <select id="selectHosp" class="form-control" asp-for="HospitalId" ></select>
         <span class="validation" asp-validation-for="HospitalId"></span>
     </div>
     <div class="form-group">
         <label class="locations" asp-for="DiseaseId">Select Disease</label>
-        <select class="form-control" asp-for="DiseaseId" asp-items="diseases"></select>
+        <select id="selectDisease" class="form-control" onmousedown="GetAllDiseases()" onchange="GetVaccinesByDisease()" asp-for="DiseaseId"></select>
         <span class="validation" asp-validation-for="DiseaseId"></span>
     </div>
     <div class="form-group">
         <label class="locations" asp-for="VaccineId">Select Vaccine</label>
-        <select class="form-control" asp-for="VaccineId" asp-items="vaccines"></select>
+        <select id="selectVaccine" class="form-control" asp-for="VaccineId"></select>
         <span class="validation" asp-validation-for="VaccineId"></span>
     </div>
     <div class="form-group">
@@ -50,7 +43,133 @@
         <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
     </div>
 
-
-
     <input type="submit" id="sendButton" class="btn btn-success" />
 </form>
+
+
+@*TODO: Rewrite the scripts so that code is reused and not copy pasted in multiple places*@
+<script>
+    function GetAllDistricts() {
+    //TODO: Fix on click setting Sofia as default value and Sofia can't be set as an option
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetAllDistrictsAjax",
+            dataType: "json",
+            success: function (result) {
+                var ele = document.getElementById('selectDist');
+
+                if (ele.innerHTML != null) {
+                    ele.innerHTML = '';
+                }
+                for (var i = 0; i < result.length; i++) {
+                    ele.innerHTML = ele.innerHTML +
+                        '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
+                };
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    }
+    function GetTownsByDistrict() {
+
+        var districtField = document.getElementById("selectDist");
+        var districtId = districtField.options[districtField.selectedIndex].value;
+   
+            $.ajax({
+                type: "GET",
+                url: "/Booking/GetTownsByDistrictAjax",
+                data: { districtId: districtId },
+                dataType: "json",
+                success: function (result) {
+                    var ele = document.getElementById('selectTown');
+
+                    if (ele.innerHTML != null) {
+                        ele.innerHTML = '';
+                    }
+                    for (var i = 0; i < result.length; i++)
+                    {
+                        ele.innerHTML = ele.innerHTML +
+                            '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
+                    };
+                },
+                error: function (error) {
+                    alert(error);
+                }
+            });
+    }
+    function GetHospitalsByTown() {
+        //TODO: Fix Hospitals not changing when you change the district
+        var townField = document.getElementById("selectTown");
+        var townId = townField.options[townField.selectedIndex].value;
+
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetHospitalsByTownAjax",
+            data: { townId: townId },
+            dataType: "json",
+            success: function (result) {
+                var ele = document.getElementById('selectHosp');
+
+                if (ele.innerHTML != null) {
+                    ele.innerHTML = '';
+                }
+                for (var i = 0; i < result.length; i++) {
+                    ele.innerHTML = ele.innerHTML +
+                        '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
+                };
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    }
+
+    function GetAllDiseases() {
+            //TODO: Fix on click setting the first value as default and that value can't be set as an option
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetAllDiseasesAjax",
+            dataType: "json",
+            success: function (result) {
+                var ele = document.getElementById('selectDisease');
+
+                if (ele.innerHTML != null) {
+                    ele.innerHTML = '';
+                }
+                for (var i = 0; i < result.length; i++) {
+                    ele.innerHTML = ele.innerHTML +
+                        '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
+                };
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    }
+    function GetVaccinesByDisease() {
+        var diseaseField = document.getElementById("selectDisease");
+        var diseaseId = diseaseField.options[diseaseField.selectedIndex].value;
+
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetVaccinesByDiseaseAjax",
+            data: { diseaseId: diseaseId },
+            dataType: "json",
+            success: function (result) {
+                var ele = document.getElementById('selectVaccine');
+
+                if (ele.innerHTML != null) {
+                    ele.innerHTML = '';
+                }
+                for (var i = 0; i < result.length; i++) {
+                    ele.innerHTML = ele.innerHTML +
+                        '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
+                };
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    }
+</script>
