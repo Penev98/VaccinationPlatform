@@ -3,39 +3,43 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using VaccinationPlatform.Data.Models;
     using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
+    using VaccinationPlatform.Web.ViewModels;
     using VaccinationPlatform.Web.ViewModels.InputModels;
 
     public class BookingController : BaseController
     {
         private readonly IGetAllService getAll;
         private readonly IBookingService bookingService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public BookingController(IGetAllService getAll, IBookingService bookingService)
+        public BookingController(IGetAllService getAll, IBookingService bookingService, UserManager<ApplicationUser> userManager)
         {
             this.getAll = getAll;
             this.bookingService = bookingService;
+            this.userManager = userManager;
         }
 
+        [Authorize]
         public IActionResult BookApointment()
         {
             BookingModel model = new BookingModel();
-            model.Districts = this.getAll.GetDistricts();
 
-            // model.Towns = this.getAll.GetTowns();
-            // model.Hospitals = this.getAll.GetHospitals();
-            // model.Diseases = this.getAll.GetDiseases();
-            // model.Vaccines = this.getAll.GetVaccines();
             model.BookingDate = DateTime.UtcNow;
 
             return this.View(model);
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> BookApointment(BookingModel bookingModel)
         {
             if (!this.ModelState.IsValid)
@@ -43,7 +47,10 @@
                 return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
             }
 
-            // await this.bookingService.CreateBookingAsync(bookingModel);
+            var user = await this.userManager.GetUserAsync(this.User);
+            string userId = user.Id;
+
+            await this.bookingService.CreateBookingAsync(bookingModel, userId);
             return this.RedirectToAction("SuccesfullBooking");
         }
 
@@ -80,6 +87,23 @@
         public IActionResult SuccesfullBooking()
         {
             return this.View();
+        }
+
+        [Authorize]
+        public IActionResult GetUserBookings()
+        {
+            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            IEnumerable<ShowBookingViewModel> userBookings = this.bookingService.GetBookingsByUserId<ShowBookingViewModel>(userId);
+            return this.View(userBookings);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> CancelBooking(int id)
+        {
+            await this.bookingService.CancelBookingAsync(id);
+
+            return this.Redirect("/Booking/GetUserBookings");
         }
     }
 }

@@ -9,6 +9,10 @@
 
     public interface IBookingService
     {
-        public Task CreateBookingAsync(BookingModel model);
+        public Task CreateBookingAsync(BookingModel model, string bookedByUserId);
+
+        public IEnumerable<T> GetBookingsByUserId<T>(string userId);
+
+        public Task CancelBookingAsync(int bookingId);
     }
 }
