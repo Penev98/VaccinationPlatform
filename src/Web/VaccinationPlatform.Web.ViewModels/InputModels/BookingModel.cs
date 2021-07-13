@@ -6,33 +6,34 @@
     using System.Text;
 
     using VaccinationPlatform.Data.Models;
+    using VaccinationPlatform.Services.Mapping;
 
-    public class BookingModel
+    public class BookingModel : IMapFrom<Booking>
     {
         [Required]
         public int DistrictId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> Districts { get; set; }
+        public string DistrictName { get; set; }
 
         [Required]
         public int TownId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> Towns { get; set; }
+        public string TownName { get; set; }
 
         [Required]
         public int HospitalId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> Hospitals { get; set; }
+        public string HospitalName { get; set; }
 
         [Required]
         public int DiseaseId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> Diseases { get; set; }
+        public string DiseaseName { get; set; }
 
         [Required]
         public int VaccineId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> Vaccines { get; set; }
+        public string VaccineName { get; set; }
 
         [Display(Name = "Date of Booking")]
         [Required]

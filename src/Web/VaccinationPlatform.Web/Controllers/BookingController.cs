@@ -109,10 +109,32 @@
         [Authorize]
         public async Task<IActionResult> RemoveBooking(int id)
         {
-            await this.bookingService.CancelBookingAsync(id);
+            await this.bookingService.RemoveBookingAsync(id);
 
             return this.Redirect("/Booking/GetUserBookings");
         }
 
+        [Authorize]
+        public IActionResult EditBooking(int id)
+        {
+            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var bookingModel = this.bookingService.GetUserBooking<BookingModel>(id, userId);
+
+            return this.View(bookingModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> EditBooking(int id, BookingModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.Content("There are validational errors. Please go back and fill the EDIT form with the rquired information.");
+            }
+
+            await this.bookingService.EditBookingAsync(model, id);
+            return this.Redirect("/Booking/GetUserBookings");
+        }
     }
 }

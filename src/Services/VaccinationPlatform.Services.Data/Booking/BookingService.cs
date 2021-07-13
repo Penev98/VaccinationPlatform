@@ -1,5 +1,6 @@
 ﻿namespace VaccinationPlatform.Services.Data.Booking
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -31,13 +32,13 @@
            await this.bookingRepo.SaveChangesAsync();
         }
 
-        public Task RemoveBooking(int bookingId)
+        public async Task RemoveBookingAsync(int bookingId)
         {
-            var bookingToRemove = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
+            var bookingToRemove = this.bookingRepo.AllWithDeleted().Where(x => x.Id == bookingId).FirstOrDefault();
 
-            if (bookingToDelete != null)
+            if (bookingToRemove != null)
             {
-                this.bookingRepo.Delete(bookingToDelete);
+                this.bookingRepo.HardDelete(bookingToRemove);
             }
 
             await this.bookingRepo.SaveChangesAsync();
@@ -64,7 +65,32 @@
 
         public IEnumerable<T> GetBookingsByUserId<T>(string userId)
         {
-            return this.bookingRepo.AllWithDeleted().Where(x => x.BookedById == userId /* && x.isRemoved == false*/).OrderBy(x => x.IsDeleted).To<T>().ToList();
+            return this.bookingRepo.AllWithDeleted().Where(x => x.BookedById == userId).OrderBy(x => x.IsDeleted).To<T>().ToList();
+        }
+
+        public T GetUserBooking<T>(int bookingId, string userId)
+        {
+            var bookingModel = this.bookingRepo.All().Where(x => x.BookedById == userId).Where(x => x.Id == bookingId).To<T>().FirstOrDefault();
+
+            return bookingModel;
+        }
+
+        public async Task EditBookingAsync(BookingModel newModel, int bookingId)
+        {
+            var bookingToEdit = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
+
+            if (bookingToEdit != null)
+            {
+                bookingToEdit.DistrictId = newModel.DistrictId;
+                bookingToEdit.TownId = newModel.TownId;
+                bookingToEdit.HospitalId = newModel.HospitalId;
+                bookingToEdit.DiseaseId = newModel.DiseaseId;
+                bookingToEdit.VaccineId = newModel.VaccineId;
+                bookingToEdit.BookingDate = newModel.BookingDate;
+                bookingToEdit.OtherInfo = newModel.OtherInfo;
+            }
+
+            await this.bookingRepo.SaveChangesAsync();
         }
     }
 }

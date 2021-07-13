@@ -28,32 +28,62 @@
             <tbody>
                 @foreach (var booking in this.Model)
                 {
-                <tr>
+                    <tr>
 
-                    @if (booking.IsDeleted)
-                    {
-                        <td><i class="fas fa-ban fa-2x text-danger"></i></td>
-                    }
-                    else
-                    {
-                        <td><i class="fas fa-check-circle fa-2x text-success"></i></td>
-                    }
+                        @if (booking.IsDeleted)
+                        {
+                            <td><i class="fas fa-ban fa-2x text-danger"></i></td>
+                        }
+                        else
+                        {
+                            <td><i class="fas fa-check-circle fa-2x text-success"></i></td>
+                        }
 
-                    <td id="bookingId">@booking.Id</td>
-                    <td>@booking.DistrictName</td>
-                    <td>@booking.TownName</td>
-                    <td>@booking.HospitalName</td>
-                    <td>@booking.DiseaseName</td>
-                    <td>@booking.VaccineName</td>
-                    <td>@booking.BookingDate.Date</td>
-                    <td><a asp-controller="Booking" asp-action="CancelBooking" asp-route-id="@booking.Id"><i class="fas fa-window-close fa-2x"></i></a></td>
-                    <td><a><i class="fas fa-edit fa-2x"></i></a></td>
-                    <td class="text-center"><a><i class="fas fa-trash-alt fa-2x"></i></a></td>
-                </tr>
+                        <td id="bookingId">@booking.Id</td>
+                        <td>@booking.DistrictName</td>
+                        <td>@booking.TownName</td>
+                        <td>@booking.HospitalName</td>
+                        <td>@booking.DiseaseName</td>
+                        <td>@booking.VaccineName</td>
+                        <td>@booking.BookingDate.Date</td>
+
+                        @if (booking.IsDeleted)
+                        {
+                            <td><a data-toggle="tooltip" data-placement="top" title="This appointment is already canceled"><i class="fas fa-window-close fa-2x"></i></a></td>
+                        }
+                        else
+                        {
+                            <td><a asp-controller="Booking" asp-action="CancelBooking" asp-route-id="@booking.Id" class="confirmCancel"><i class="fas fa-window-close fa-2x"></i></a></td>
+                        }
+                        @if (booking.IsDeleted)
+                        {
+                            <td><a data-toggle="tooltip" data-placement="top" title="This appointment is canceled"><i class="fas fa-edit fa-2x"></i></a></td>
+                        }
+                        else
+                        {
+                            <td><a asp-controller="Booking" asp-action="EditBooking" asp-route-id="@booking.Id"><i class="fas fa-edit fa-2x"></i></a></td>
+                        }
+
+                        <td class="text-center"><a asp-controller="Booking" asp-action="RemoveBooking" asp-route-id="@booking.Id" class="confirmRemove"><i class="fas fa-trash-alt fa-2x"></i></a></td>
+                    </tr>
                 }
 
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $('.confirmCancel').on('click', function () {
+        return confirm('Are you sure you want to cancel this appointment?');
+    });
+
+    $('.confirmRemove').on('click', function () {
+        return confirm('If the booking is active this will cancel and delete it. Are you sure you want to remove this booking completely?');
+    });
+</script>
 

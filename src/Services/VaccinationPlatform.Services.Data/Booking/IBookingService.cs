@@ -15,7 +15,10 @@
 
         public Task CancelBookingAsync(int bookingId);
 
-        public Task RemoveBooking(int bookingId);
+        public Task RemoveBookingAsync(int bookingId);
 
+        public Task EditBookingAsync(BookingModel newModel, int bookingId);
+
+        public T GetUserBooking<T>(int bookingId, string userId);
     }
 }
