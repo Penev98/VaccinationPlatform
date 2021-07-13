@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using VaccinationPlatform.Data.Models;
-using VaccinationPlatform.Services.Mapping;
-
-namespace VaccinationPlatform.Web.ViewModels
+﻿namespace VaccinationPlatform.Web.ViewModels
 {
-  public class ShowBookingViewModel : IMapFrom<Booking>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using VaccinationPlatform.Data.Models;
+    using VaccinationPlatform.Services.Mapping;
+
+    public class ShowBookingViewModel : IMapFrom<Booking>
     {
         public int Id { get; set; }
 
@@ -21,5 +22,7 @@ namespace VaccinationPlatform.Web.ViewModels
         public string VaccineName { get; set; }
 
         public DateTime BookingDate { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

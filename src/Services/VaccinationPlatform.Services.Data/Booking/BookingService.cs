@@ -21,14 +21,26 @@
 
         public async Task CancelBookingAsync(int bookingId)
         {
-           var bookingToDelete = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
+           var bookingToCancel = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
 
-           if (bookingToDelete != null)
+           if (bookingToCancel != null)
+            {
+                this.bookingRepo.Delete(bookingToCancel);
+            }
+
+           await this.bookingRepo.SaveChangesAsync();
+        }
+
+        public Task RemoveBooking(int bookingId)
+        {
+            var bookingToRemove = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
+
+            if (bookingToDelete != null)
             {
                 this.bookingRepo.Delete(bookingToDelete);
             }
 
-           await this.bookingRepo.SaveChangesAsync();
+            await this.bookingRepo.SaveChangesAsync();
         }
 
         public async Task CreateBookingAsync(BookingModel model, string bookedByUserId)
@@ -52,7 +64,7 @@
 
         public IEnumerable<T> GetBookingsByUserId<T>(string userId)
         {
-            return this.bookingRepo.All().Where(x => x.BookedById == userId && x.IsDeleted == false).To<T>().ToList();
+            return this.bookingRepo.AllWithDeleted().Where(x => x.BookedById == userId /* && x.isRemoved == false*/).OrderBy(x => x.IsDeleted).To<T>().ToList();
         }
     }
 }

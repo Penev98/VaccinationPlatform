@@ -105,5 +105,14 @@
 
             return this.Redirect("/Booking/GetUserBookings");
         }
+
+        [Authorize]
+        public async Task<IActionResult> RemoveBooking(int id)
+        {
+            await this.bookingService.CancelBookingAsync(id);
+
+            return this.Redirect("/Booking/GetUserBookings");
+        }
+
     }
 }

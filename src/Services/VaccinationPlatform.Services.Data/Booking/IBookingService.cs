@@ -14,5 +14,8 @@
         public IEnumerable<T> GetBookingsByUserId<T>(string userId);
 
         public Task CancelBookingAsync(int bookingId);
+
+        public Task RemoveBooking(int bookingId);
+
     }
 }

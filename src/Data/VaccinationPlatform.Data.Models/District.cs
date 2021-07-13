@@ -21,6 +21,5 @@
         public virtual ICollection<Town> Towns { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
-
     }
 }
