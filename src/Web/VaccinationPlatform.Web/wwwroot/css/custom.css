@@ -92,3 +92,7 @@ h1.locations{
 div#myTable {
     background-color: lightsteelblue !important;
 }
+#checkAvailableButton {
+   margin-top:5px !important;
+
+}

@@ -5,54 +5,101 @@
 }
 @model VaccinationPlatform.Web.ViewModels.InputModels.BookingModel
 
-
-
 <h1 class="locations">@ViewData["Title"]</h1>
 
-<form method="post" class="col-md-4">
-    <div class="validation" asp-validation-summary="All"></div>
-    <div class="form-group">
-        <label class="locations" asp-for="DistrictId">Select District</label>
-        <select id="selectDist" class="form-control" onmousedown="GetAllDistricts()" onchange="GetTownsByDistrict();" asp-for="DistrictId"></select>
-        <span class="validation" asp-validation-for="DistrictId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="TownId">Select Town</label>
-        <select id="selectTown" class="form-control" onchange="GetHospitalsByTown()" asp-for="TownId"></select>
-        <span class="validation" asp-validation-for="TownId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="HospitalId ">Select Hospital</label>
-        <select id="selectHosp" class="form-control" asp-for="HospitalId"></select>
-        <span class="validation" asp-validation-for="HospitalId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="DiseaseId">Select Disease</label>
-        <select id="selectDisease" class="form-control" onmousedown="GetAllDiseases()" onchange="GetVaccinesByDisease()" asp-for="DiseaseId"></select>
-        <span class="validation" asp-validation-for="DiseaseId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="VaccineId">Select Vaccine</label>
-        <select id="selectVaccine" class="form-control" asp-for="VaccineId"></select>
-        <span class="validation" asp-validation-for="VaccineId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="BookingDate">Select Date</label>
-        <input type="datetime-local" class="form-control" asp-for="BookingDate" />
-        <span class="validation" asp-validation-for="BookingDate"></span>
-    </div>
-  
-    <div class="form-group">
-        <label class="locations" asp-for="OtherInfo">Aditional Information(not required)</label>
-        <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
-    </div>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="validation" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label class="locations" asp-for="DistrictId">Select District</label>
+                <select id="selectDist" class="form-control" onmousedown="GetAllDistricts()" onchange="GetTownsByDistrict();" asp-for="DistrictId"></select>
+                <span class="validation" asp-validation-for="DistrictId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="TownId">Select Town</label>
+                <select id="selectTown" class="form-control" onchange="GetHospitalsByTown()" asp-for="TownId"></select>
+                <span class="validation" asp-validation-for="TownId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="HospitalId ">Select Hospital</label>
+                <select id="selectHosp" class="form-control" asp-for="HospitalId"></select>
+                <span class="validation" asp-validation-for="HospitalId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="DiseaseId">Select Disease</label>
+                <select id="selectDisease" class="form-control" onmousedown="GetAllDiseases()" onchange="GetVaccinesByDisease()" asp-for="DiseaseId"></select>
+                <span class="validation" asp-validation-for="DiseaseId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="VaccineId">Select Vaccine</label>
+                <select id="selectVaccine" class="form-control" asp-for="VaccineId"></select>
+                <span class="validation" asp-validation-for="VaccineId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="BookingDate">Select Date</label>
+                <input type="datetime-local" class="form-control" id="selectBookingDate" asp-for="BookingDate" onchange="ClearData()" />
+                <span class="validation" asp-validation-for="BookingDate"></span>
+                <div class="form-inline" id="checkAvailableButton">
+                    <a class="btn btn-info" onclick="CheckDate()">Check if date is available</a>
+                    @*<a class="btn btn-danger">Not Available</a>*@
+                </div>
+               
+            </div>
 
-    <input type="submit" id="sendButton" class="btn btn-success" />
-</form>
+            <div class="form-group">
+                <label class="locations" asp-for="OtherInfo">Aditional Information(not required)</label>
+                <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
+            </div>
 
+            <input type="submit" id="sendButton" class="btn btn-success" />
+        </form>
+    </div>
+</div>
 
 @*TODO: Rewrite the scripts so that code is reused and not copy pasted in multiple places*@
 <script>
+    function ClearData() {
+        var inlineDiv = document.getElementById("checkAvailableButton");
+        if (inlineDiv.childElementCount > 1) {
+            inlineDiv.lastChild.remove();
+        }
+    }
+
+    function CheckDate() {
+
+        var inlineDiv = document.getElementById("checkAvailableButton");
+
+        var hospitalField = document.getElementById("selectHosp");
+        var hospitalId = hospitalField.options[hospitalField.selectedIndex].value;
+
+        var bookingDate = document.getElementById("selectBookingDate").value;
+
+        $.ajax({
+            type: "GET",
+            url: "/Booking/CheckDate",
+            data: { hospitalId: hospitalId, bookingDate: bookingDate },
+            dataType: "json",
+            success: function (result) {
+               
+                if (result == 0) {
+                    if (inlineDiv.childElementCount > 1) {
+                        inlineDiv.lastChild.removeChild();
+                    }
+                    inlineDiv.innerHTML = inlineDiv.innerHTML + '<a class="btn btn-success">Available</a>';
+                }
+                else {
+                    if (inlineDiv.childElementCount > 1) {
+                        inlineDiv.lastChild.removeChild();
+                    }
+                    inlineDiv.innerHTML = inlineDiv.innerHTML + '<a class="btn btn-danger">Not Available</a>';
+                }
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    }
     function GetAllDistricts() {
         //TODO: Fix on click setting Sofia as default value and Sofia can't be set as an option
         $.ajax({
@@ -176,4 +223,5 @@
             }
         });
     }
+
 </script>

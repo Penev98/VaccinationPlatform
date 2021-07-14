@@ -48,6 +48,7 @@
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
              var service = (IAvailableBooking)validationContext.GetService(typeof(IAvailableBooking));
+
              bool result = service.IsBookingAvailable(this.HospitalId, this.BookingDate);
 
              if (result == false)

@@ -10,6 +10,7 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using VaccinationPlatform.Data.Models;
+    using VaccinationPlatform.Services;
     using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Web.ViewModels;
@@ -20,12 +21,14 @@
         private readonly IGetAllService getAll;
         private readonly IBookingService bookingService;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IAvailableBooking checkBooking;
 
-        public BookingController(IGetAllService getAll, IBookingService bookingService, UserManager<ApplicationUser> userManager)
+        public BookingController(IGetAllService getAll, IBookingService bookingService, UserManager<ApplicationUser> userManager, IAvailableBooking checkBooking)
         {
             this.getAll = getAll;
             this.bookingService = bookingService;
             this.userManager = userManager;
+            this.checkBooking = checkBooking;
         }
 
         [Authorize]
@@ -42,7 +45,6 @@
         {
             if (!this.ModelState.IsValid)
             {
-                //return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
                 return this.View(bookingModel);
             }
 
@@ -129,11 +131,24 @@
         {
             if (!this.ModelState.IsValid)
             {
-                return this.Content("There are validational errors. Please go back and fill the EDIT form with the rquired information.");
+                return this.View(model);
             }
 
             await this.bookingService.EditBookingAsync(model, id);
             return this.Redirect("/Booking/GetUserBookings");
+        }
+
+        [HttpGet]
+        public int CheckDate(int hospitalId, DateTime bookingDate)
+        {
+            bool result = this.checkBooking.IsBookingAvailable(hospitalId, bookingDate);
+
+            if (result)
+            {
+                return 0;
+            }
+
+            return 1;
         }
     }
 }

@@ -6,6 +6,7 @@
     using System.Text;
 
     using VaccinationPlatform.Data.Models;
+    using VaccinationPlatform.Services;
     using VaccinationPlatform.Services.Mapping;
 
     public class ShowBookingViewModel : IMapFrom<Booking>
@@ -22,9 +23,9 @@
 
         public string VaccineName { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime BookingDate { get; set; }
 
         public bool IsDeleted { get; set; }
-
     }
 }
