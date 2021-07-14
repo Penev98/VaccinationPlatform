@@ -20,19 +20,19 @@
             this.bookingRepo = bookingRepo;
         }
 
-        public async Task CancelBookingAsync(int bookingId)
+        public async Task CancelBookingAsync(string bookingId)
         {
-           var bookingToCancel = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
+            var bookingToCancel = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
 
-           if (bookingToCancel != null)
+            if (bookingToCancel != null)
             {
                 this.bookingRepo.Delete(bookingToCancel);
             }
 
-           await this.bookingRepo.SaveChangesAsync();
+            await this.bookingRepo.SaveChangesAsync();
         }
 
-        public async Task RemoveBookingAsync(int bookingId)
+        public async Task RemoveBookingAsync(string bookingId)
         {
             var bookingToRemove = this.bookingRepo.AllWithDeleted().Where(x => x.Id == bookingId).FirstOrDefault();
 
@@ -68,14 +68,14 @@
             return this.bookingRepo.AllWithDeleted().Where(x => x.BookedById == userId).OrderBy(x => x.IsDeleted).To<T>().ToList();
         }
 
-        public T GetUserBooking<T>(int bookingId, string userId)
+        public T GetUserBooking<T>(string bookingId, string userId)
         {
             var bookingModel = this.bookingRepo.All().Where(x => x.BookedById == userId).Where(x => x.Id == bookingId).To<T>().FirstOrDefault();
 
             return bookingModel;
         }
 
-        public async Task EditBookingAsync(BookingModel newModel, int bookingId)
+        public async Task EditBookingAsync(BookingModel newModel, string bookingId)
         {
             var bookingToEdit = this.bookingRepo.All().Where(x => x.Id == bookingId).FirstOrDefault();
 

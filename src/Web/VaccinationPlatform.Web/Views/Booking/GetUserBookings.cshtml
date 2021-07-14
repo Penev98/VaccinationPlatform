@@ -13,7 +13,6 @@
             <thead>
                 <tr>
                     <th>Status</th>
-                    <th>Id</th>
                     <th>District</th>
                     <th>Town</th>
                     <th>Hospital</th>
@@ -39,13 +38,12 @@
                             <td><i class="fas fa-check-circle fa-2x text-success"></i></td>
                         }
 
-                        <td id="bookingId">@booking.Id</td>
                         <td>@booking.DistrictName</td>
                         <td>@booking.TownName</td>
                         <td>@booking.HospitalName</td>
                         <td>@booking.DiseaseName</td>
                         <td>@booking.VaccineName</td>
-                        <td>@booking.BookingDate.Date</td>
+                        <td>@booking.BookingDate.ToString("g")</td>
 
                         @if (booking.IsDeleted)
                         {

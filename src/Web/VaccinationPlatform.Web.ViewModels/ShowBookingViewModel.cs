@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
 
     using VaccinationPlatform.Data.Models;
@@ -9,7 +10,7 @@
 
     public class ShowBookingViewModel : IMapFrom<Booking>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string DistrictName { get; set; }
 
@@ -24,5 +25,6 @@
         public DateTime BookingDate { get; set; }
 
         public bool IsDeleted { get; set; }
+
     }
 }

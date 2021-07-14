@@ -13,12 +13,12 @@
 
         public IEnumerable<T> GetBookingsByUserId<T>(string userId);
 
-        public Task CancelBookingAsync(int bookingId);
+        public Task CancelBookingAsync(string bookingId);
 
-        public Task RemoveBookingAsync(int bookingId);
+        public Task RemoveBookingAsync(string bookingId);
 
-        public Task EditBookingAsync(BookingModel newModel, int bookingId);
+        public Task EditBookingAsync(BookingModel newModel, string bookingId);
 
-        public T GetUserBooking<T>(int bookingId, string userId);
+        public T GetUserBooking<T>(string bookingId, string userId);
     }
 }

@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
-
+   
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -14,7 +14,7 @@
     using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Web.ViewModels;
     using VaccinationPlatform.Web.ViewModels.InputModels;
-
+   
     public class BookingController : BaseController
     {
         private readonly IGetAllService getAll;
@@ -32,9 +32,7 @@
         public IActionResult BookApointment()
         {
             BookingModel model = new BookingModel();
-
-            model.BookingDate = DateTime.UtcNow;
-
+            model.BookingDate = DateTime.UtcNow.Date;
             return this.View(model);
         }
 
@@ -44,7 +42,8 @@
         {
             if (!this.ModelState.IsValid)
             {
-                return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
+                //return this.Content("There are validational errors. Please go back and fill the form with the rquired information.");
+                return this.View(bookingModel);
             }
 
             var user = await this.userManager.GetUserAsync(this.User);
@@ -99,7 +98,7 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> CancelBooking(int id)
+        public async Task<IActionResult> CancelBooking(string id)
         {
             await this.bookingService.CancelBookingAsync(id);
 
@@ -107,7 +106,7 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> RemoveBooking(int id)
+        public async Task<IActionResult> RemoveBooking(string id)
         {
             await this.bookingService.RemoveBookingAsync(id);
 
@@ -115,7 +114,7 @@
         }
 
         [Authorize]
-        public IActionResult EditBooking(int id)
+        public IActionResult EditBooking(string id)
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -126,7 +125,7 @@
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> EditBooking(int id, BookingModel model)
+        public async Task<IActionResult> EditBooking(string id, BookingModel model)
         {
             if (!this.ModelState.IsValid)
             {

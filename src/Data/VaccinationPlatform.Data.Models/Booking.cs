@@ -7,8 +7,13 @@
 
     using VaccinationPlatform.Data.Common.Models;
 
-    public class Booking : BaseDeletableModel<int>
+    public class Booking : BaseDeletableModel<string>
     {
+        public Booking()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         public int DistrictId { get; set; }
 
         public virtual District District { get; set; }
@@ -30,6 +35,7 @@
         public virtual Vaccine Vaccine { get; set; }
 
         [Required]
+
         public DateTime BookingDate { get; set; }
 
         public string OtherInfo { get; set; }

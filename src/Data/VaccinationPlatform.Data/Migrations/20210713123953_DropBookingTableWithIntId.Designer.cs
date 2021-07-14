@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VaccinationPlatform.Data;
 
 namespace VaccinationPlatform.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210713123953_DropBookingTableWithIntId")]
+    partial class DropBookingTableWithIntId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -258,66 +260,6 @@ namespace VaccinationPlatform.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("VaccinationPlatform.Data.Models.Booking", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("BookedById")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("BookingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DiseaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DistrictId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HospitalId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("OtherInfo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TownId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VaccineId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookedById");
-
-                    b.HasIndex("DiseaseId");
-
-                    b.HasIndex("DistrictId");
-
-                    b.HasIndex("HospitalId");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.HasIndex("TownId");
-
-                    b.HasIndex("VaccineId");
-
-                    b.ToTable("Bookings");
-                });
-
             modelBuilder.Entity("VaccinationPlatform.Data.Models.Disease", b =>
                 {
                     b.Property<int>("Id")
@@ -516,55 +458,6 @@ namespace VaccinationPlatform.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("VaccinationPlatform.Data.Models.Booking", b =>
-                {
-                    b.HasOne("VaccinationPlatform.Data.Models.ApplicationUser", "BookedBy")
-                        .WithMany()
-                        .HasForeignKey("BookedById");
-
-                    b.HasOne("VaccinationPlatform.Data.Models.Disease", "Disease")
-                        .WithMany()
-                        .HasForeignKey("DiseaseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("VaccinationPlatform.Data.Models.District", "District")
-                        .WithMany()
-                        .HasForeignKey("DistrictId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("VaccinationPlatform.Data.Models.Hospital", "Hospital")
-                        .WithMany()
-                        .HasForeignKey("HospitalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("VaccinationPlatform.Data.Models.Town", "Town")
-                        .WithMany()
-                        .HasForeignKey("TownId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("VaccinationPlatform.Data.Models.Vaccine", "Vaccine")
-                        .WithMany()
-                        .HasForeignKey("VaccineId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("BookedBy");
-
-                    b.Navigation("Disease");
-
-                    b.Navigation("District");
-
-                    b.Navigation("Hospital");
-
-                    b.Navigation("Town");
-
-                    b.Navigation("Vaccine");
                 });
 
             modelBuilder.Entity("VaccinationPlatform.Data.Models.Hospital", b =>

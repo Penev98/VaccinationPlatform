@@ -6,9 +6,10 @@
     using System.Text;
 
     using VaccinationPlatform.Data.Models;
+    using VaccinationPlatform.Services;
     using VaccinationPlatform.Services.Mapping;
 
-    public class BookingModel : IMapFrom<Booking>
+    public class BookingModel : IMapFrom<Booking>, IValidatableObject
     {
         [Required]
         public int DistrictId { get; set; }
@@ -43,5 +44,16 @@
         [Display(Name = "Other Information")]
         [DataType(DataType.MultilineText)]
         public string OtherInfo { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+             var service = (IAvailableBooking)validationContext.GetService(typeof(IAvailableBooking));
+             bool result = service.IsBookingAvailable(this.HospitalId, this.BookingDate);
+
+             if (result == false)
+            {
+                yield return new ValidationResult("This date is already booked for this hospital.", new[] { "BookingDate" });
+            }
+        }
     }
 }

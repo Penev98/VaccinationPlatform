@@ -16,6 +16,7 @@
     using VaccinationPlatform.Data.Models;
     using VaccinationPlatform.Data.Repositories;
     using VaccinationPlatform.Data.Seeding;
+    using VaccinationPlatform.Services;
     using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
 
@@ -68,6 +69,7 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<IGetAllService, GetAllService>();
             services.AddTransient<IBookingService, BookingService>();
+            services.AddTransient<IAvailableBooking, AvailableBooking>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,6 +5,8 @@
 }
 @model VaccinationPlatform.Web.ViewModels.InputModels.BookingModel
 
+
+
 <h1 class="locations">@ViewData["Title"]</h1>
 
 <form method="post" class="col-md-4">
@@ -36,9 +38,10 @@
     </div>
     <div class="form-group">
         <label class="locations" asp-for="BookingDate">Select Date</label>
-        <input class="form-control" asp-for="BookingDate" />
+        <input type="datetime-local" class="form-control" asp-for="BookingDate" />
         <span class="validation" asp-validation-for="BookingDate"></span>
     </div>
+  
     <div class="form-group">
         <label class="locations" asp-for="OtherInfo">Aditional Information(not required)</label>
         <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
