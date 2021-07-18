@@ -94,5 +94,28 @@ div#myTable {
 }
 #checkAvailableButton {
    margin-top:5px !important;
-
+   
+}
+.text{
+    color:white !important;
+}
+div#cardBoarder {
+    border: 2px solid white !important;
+}
+h4#hospTitle {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+p#hospDisc {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+a#hospButton {
+    margin-left: 223px;
+}
+div#locationsPage{
+    margin-left: 25px !important;
 }

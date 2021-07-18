@@ -28,5 +28,7 @@
         public virtual ICollection<Vaccine> Vaccines { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
+
+        public virtual Image Image { get; set; }
     }
 }

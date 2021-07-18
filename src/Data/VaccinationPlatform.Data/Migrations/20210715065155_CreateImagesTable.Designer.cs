@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VaccinationPlatform.Data;
 
 namespace VaccinationPlatform.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210715065155_CreateImagesTable")]
+    partial class CreateImagesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -422,8 +424,7 @@ namespace VaccinationPlatform.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HospitalId")
-                        .IsUnique();
+                    b.HasIndex("HospitalId");
 
                     b.HasIndex("IsDeleted");
 
@@ -616,8 +617,8 @@ namespace VaccinationPlatform.Data.Migrations
             modelBuilder.Entity("VaccinationPlatform.Data.Models.Image", b =>
                 {
                     b.HasOne("VaccinationPlatform.Data.Models.Hospital", "Hospital")
-                        .WithOne("Image")
-                        .HasForeignKey("VaccinationPlatform.Data.Models.Image", "HospitalId")
+                        .WithMany("Images")
+                        .HasForeignKey("HospitalId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -675,7 +676,7 @@ namespace VaccinationPlatform.Data.Migrations
                 {
                     b.Navigation("Bookings");
 
-                    b.Navigation("Image");
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("VaccinationPlatform.Data.Models.Town", b =>

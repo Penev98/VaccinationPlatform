@@ -19,6 +19,7 @@
     using VaccinationPlatform.Services;
     using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
+    using VaccinationPlatform.Services.Data.Locations;
 
     // using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Mapping;
@@ -70,6 +71,7 @@
             services.AddTransient<IGetAllService, GetAllService>();
             services.AddTransient<IBookingService, BookingService>();
             services.AddTransient<IAvailableBooking, AvailableBooking>();
+            services.AddTransient<ILocationService, LocationsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

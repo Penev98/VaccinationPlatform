@@ -1,3 +1,134 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Locations";
 
-<div class="bg-success">  Locations </div>
+}
+
+@model List<LocationsViewModel>
+
+<h1 class="locations">@ViewData["Title"]</h1>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div id="test" class="form-inline" style="margin-left:20px;">
+            <div class="form-group">
+                <label class="locations"></label>
+                <select id="selectDistFilter" class="form-control"><option>Select a district</option></select>
+            </div>
+            <div class="form-group">
+                <label class="locations"></label>
+                <select id="selectTownFilter" class="form-control"></select>
+            </div>
+            <button id="filterButton" class="btn btn-info" style="margin-left:5px" onclick="Filter()">Filter</button>
+
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<div id="allLocations">
+    @foreach (var location in Model)
+    {
+        <div id="locationsPage" class="col-md-6 elementCard">
+            <div class="card" id="cardBoarder" style="width: 56rem;height:650px; position:relative!important; background-color:lightslategrey">
+                <img class="card-img-top" src="@location.ImageUrl" width="555" height="400" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="text" id="hospTitle">@location.Name</h4>
+                    <p class="text" id="hospDisc">@location.Description</p>
+                    <a href="#" class="btn btn-primary" id="hospButton" style="position:absolute!important;bottom:10px!important">Book here</a>
+                </div>
+            </div>
+            <div class="hidden">@location.TownId</div>
+            <br />
+        </div>
+    }
+</div>
+<script>
+    $(document).one('click', '#selectDistFilter', function GetDistricts() {
+
+        var distSelect = document.getElementById('selectDistFilter');
+
+        while (distSelect.firstChild) {
+            distSelect.removeChild(distSelect.firstChild);
+        };
+        $.ajax({
+            type: "GET",
+            url: "/Locations/GetDistricts",
+            dataType: "json",
+            success: function (result) {
+                distSelect.innerHTML += '<option value=""></option>';
+                for (var i = 0; i < result.length; i++) {
+
+                    distSelect.innerHTML += '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>';
+                }
+
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    });
+
+    $(document).on('change', '#selectDistFilter', function GetDistricts() {
+
+        var townsSelect = document.getElementById('selectTownFilter');
+
+        var districtField = document.getElementById("selectDistFilter");
+        var districtId = districtField.options[districtField.selectedIndex].value;
+
+        while (townsSelect.firstChild) {
+            townsSelect.removeChild(townsSelect.firstChild);
+        };
+        $.ajax({
+            type: "GET",
+            url: "/Locations/GetTowns",
+            data: { districtId: districtId },
+            dataType: "json",
+            success: function (result) {
+
+                for (var i = 0; i < result.length; i++) {
+
+                    townsSelect.innerHTML += '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>';
+                }
+
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    });
+
+    function Filter() {
+
+        var searchedTownId = document.getElementById('selectTownFilter').value;
+
+        var allDiv = document.getElementById('allLocations');
+        var allLocations = allDiv.getElementsByClassName('elementCard');
+
+        //If there are any removed elements after filtering , reset them for the next filtering
+        for (var i = 0; i < allLocations.length; i++) {
+
+            var currentElement = allLocations[i];
+
+            if (currentElement.classList.contains('hidden')) {
+
+                currentElement.classList.remove('hidden');
+            }
+        }
+
+        //Remove(add class = "hidden") the elements that don't match the filter criteria
+        for (var i = 0; i < allLocations.length; i++) {
+
+            var currentElement = allLocations[i];
+            var hidden = currentElement.children[1];
+
+            if (hidden.innerHTML != searchedTownId) {
+                currentElement.classList.add('hidden');
+                console.log("removed");
+            }
+
+        }
+    }
+
+</script>

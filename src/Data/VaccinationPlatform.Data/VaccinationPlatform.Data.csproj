@@ -56,6 +56,9 @@
     <None Update="Seeding\SeedData\hospitals.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Seeding\SeedData\images.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Seeding\SeedData\vaccines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

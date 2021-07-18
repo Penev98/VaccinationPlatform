@@ -6,6 +6,7 @@
 
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+    using VaccinationPlatform.Data.Seeding.SeedData;
 
     public class ApplicationDbContextSeeder : ISeeder
     {
@@ -25,15 +26,15 @@
 
             var seeders = new List<ISeeder>
                           {
-                               // Uncomment if you start the app for the first time -> the first start will seed the data in the database
+                                   // Uncomment if you start the app for the first time -> the first start will seed the data in the database
 
-                              // new RolesSeeder(),
-                              // new DistrictSeeder(),
-                              // new TownSeeder(),
-                               // new HospitalsSeeder(),
-
-                               // new DiseasesSeeder(),
-                               // new VaccinesSeeder(),
+                                 // new RolesSeeder(),
+                                // new DistrictSeeder(),
+                               // new TownSeeder(),
+                              // new HospitalsSeeder(),
+                             // new DiseasesSeeder(),
+                            // new VaccinesSeeder(),
+                           // new ImagesSeeder(),
                           };
 
             if (seeders.Count > 0)
