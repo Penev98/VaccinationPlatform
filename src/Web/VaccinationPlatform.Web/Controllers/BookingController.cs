@@ -15,7 +15,7 @@
     using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Web.ViewModels;
     using VaccinationPlatform.Web.ViewModels.InputModels;
-   
+
     public class BookingController : BaseController
     {
         private readonly IGetAllService getAll;
@@ -32,10 +32,13 @@
         }
 
         [Authorize]
-        public IActionResult BookApointment()
+        public IActionResult BookApointment(BookingModel model, DateTime bookDate)
         {
-            BookingModel model = new BookingModel();
-            model.BookingDate = DateTime.UtcNow.Date;
+            if (bookDate.Year < 2020)
+            {
+                model.BookingDate = DateTime.UtcNow.Date;
+            }
+
             return this.View(model);
         }
 

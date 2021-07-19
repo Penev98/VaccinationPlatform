@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Book an Appointment";
 }
-@model VaccinationPlatform.Web.ViewModels.InputModels.BookingModel
+@model BookingModel
 
 <h1 class="locations">@ViewData["Title"]</h1>
 
@@ -11,17 +11,32 @@
             <div class="validation" asp-validation-summary="All"></div>
             <div class="form-group">
                 <label class="locations" asp-for="DistrictId">Select District</label>
-                <select id="selectDist" class="form-control" onmousedown="GetAllDistricts()" onchange="GetTownsByDistrict();" asp-for="DistrictId"></select>
+                <select id="selectDist" class="form-control" onmousedown="GetAllDistricts()" onchange="GetTownsByDistrict();" asp-for="DistrictId">
+                    @if (Model.DistrictId != 0)
+                    {
+                        <option value="@Model.DistrictId">@Model.DistrictName</option>
+                    }
+                </select>
                 <span class="validation" asp-validation-for="DistrictId"></span>
             </div>
             <div class="form-group">
                 <label class="locations" asp-for="TownId">Select Town</label>
-                <select id="selectTown" class="form-control" onchange="GetHospitalsByTown()" asp-for="TownId"></select>
+                <select id="selectTown" class="form-control" onchange="GetHospitalsByTown()" asp-for="TownId">
+                    @if (Model.TownId != 0)
+                    {
+                        <option value="@Model.TownId">@Model.TownName</option>
+                    }
+                </select>
                 <span class="validation" asp-validation-for="TownId"></span>
             </div>
             <div class="form-group">
                 <label class="locations" asp-for="HospitalId ">Select Hospital</label>
-                <select id="selectHosp" class="form-control" asp-for="HospitalId"></select>
+                <select id="selectHosp" class="form-control" asp-for="HospitalId">
+                    @if (Model.HospitalId != 0)
+                    {
+                        <option value="@Model.HospitalId">@Model.HospitalName</option>
+                    }
+                </select>
                 <span class="validation" asp-validation-for="HospitalId"></span>
             </div>
             <div class="form-group">

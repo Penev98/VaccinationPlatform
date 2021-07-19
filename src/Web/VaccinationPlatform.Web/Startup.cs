@@ -1,5 +1,6 @@
 ﻿namespace VaccinationPlatform.Web
 {
+    using System.IO;
     using System.Reflection;
 
     using Microsoft.AspNetCore.Builder;
@@ -72,6 +73,21 @@
             services.AddTransient<IBookingService, BookingService>();
             services.AddTransient<IAvailableBooking, AvailableBooking>();
             services.AddTransient<ILocationService, LocationsService>();
+
+            services.AddAuthentication()
+                .AddFacebook(opt =>
+                {
+                    var api = File.ReadAllLines(@"..\..\Web\VaccinationPlatform.Web\ApiKeys.txt");
+                    opt.AppId = api[0];
+                    opt.AppSecret = api[1];
+                })
+                .AddGoogle(opt =>
+                {
+                    var api = File.ReadAllLines(@"..\..\Web\VaccinationPlatform.Web\ApiKeys.txt");
+
+                    opt.ClientId = api[2];
+                    opt.ClientSecret = api[3];
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -110,7 +126,7 @@
             app.UseEndpoints(
                 endpoints =>
                     {
-                       // endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                        // endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });

@@ -30,13 +30,13 @@
 <div id="allLocations">
     @foreach (var location in Model)
     {
-        <div id="locationsPage" class="col-md-6 elementCard">
+        <div id="locationsPage" class="col-md-4 elementCard">
             <div class="card" id="cardBoarder" style="width: 56rem;height:650px; position:relative!important; background-color:lightslategrey">
                 <img class="card-img-top" src="@location.ImageUrl" width="555" height="400" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="text" id="hospTitle">@location.Name</h4>
                     <p class="text" id="hospDisc">@location.Description</p>
-                    <a href="#" class="btn btn-primary" id="hospButton" style="position:absolute!important;bottom:10px!important">Book here</a>
+                    <a asp-controller="Booking" asp-action="BookApointment" asp-route-districtId="@location.TownDistrictId" asp-route-districtName="@location.TownDistrictName" asp-route-townId="@location.TownId" asp-route-townName="@location.TownName" asp-route-hospitalId="@location.Id" asp-route-hospitalName="@location.Name"  class="btn btn-primary" id="hospButton" style="position:absolute!important;bottom:10px!important">Book here</a>
                 </div>
             </div>
             <div class="hidden">@location.TownId</div>
