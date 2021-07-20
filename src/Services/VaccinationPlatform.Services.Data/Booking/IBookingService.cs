@@ -20,5 +20,7 @@
         public Task EditBookingAsync(BookingModel newModel, string bookingId);
 
         public T GetUserBooking<T>(string bookingId, string userId);
+
+        public IEnumerable<T> GetAllBookings<T>();
     }
 }

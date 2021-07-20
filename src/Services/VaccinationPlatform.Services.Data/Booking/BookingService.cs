@@ -92,5 +92,10 @@
 
             await this.bookingRepo.SaveChangesAsync();
         }
+
+        public IEnumerable<T> GetAllBookings<T>()
+        {
+            return this.bookingRepo.AllAsNoTrackingWithDeleted().To<T>().ToList();
+        }
     }
 }

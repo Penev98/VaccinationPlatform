@@ -12,11 +12,6 @@
             return this.View();
         }
 
-        public IActionResult About()
-        {
-            return this.View();
-        }
-
         public IActionResult MedicalInfo()
         {
             return this.View();

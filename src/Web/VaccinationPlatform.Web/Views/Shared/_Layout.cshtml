@@ -1,4 +1,6 @@
 ﻿@using VaccinationPlatform.Common
+@inject UserManager<ApplicationUser> userManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
 
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/93ab6c6aca.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="~/css/custom.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />*@
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>*@
+
+    <script src="https://kit.fontawesome.com/93ab6c6aca.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="~/css/custom.css" />
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">
 
 </head>
 <body>
@@ -36,14 +50,17 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li id="homeTab" class="nav-pills"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Locations" asp-action="Index">Locations</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="MedicalInfo">Medical Info</a></li>
-                        <li><a asp-controller="Booking" asp-action="BookApointment">Book an apointment</a></li>
+                        <li id="homeTab"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li id="homeTab"><a asp-controller="Locations" asp-action="Index">Locations</a></li>
+                        <li id="homeTab"><a asp-controller="Home" asp-action="MedicalInfo">Medical Info</a></li>
+                        <li id="homeTab"><a asp-controller="Booking" asp-action="BookApointment">Book an apointment</a></li>
                         @if (this.User.Identity.IsAuthenticated)
                         {
-                            <li><a asp-controller="Booking" asp-action="GetUserBookings">My Bookings</a></li>
+                            <li id="homeTab"><a asp-controller="Booking" asp-action="GetUserBookings">My Bookings</a></li>
+                        }
+                        @if (this.User.IsInRole("Administrator"))
+                        {
+                            <li id="homeTab"><a asp-controller="Admin" asp-action="AllBookings">All Bookings</a></li>
                         }
                     </ul>
 
@@ -60,7 +77,9 @@
                     }
                     else
                     {
-                        <ul class="nav navbar-nav navbar-right ">
+                        <ul class="nav navbar-nav  navbar-right">
+                            <li id="homeTab"><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                            <li id="homeTab"><a asp-area="Identity" asp-page="/Account/Login">Log In</a></li>
                             <li><a><i class="fab fa-facebook fa-2x"></i></a></li>
                             <li><a><i class="fab fa-twitter fa-2x"></i></a></li>
                             <li><a><i class="fab fa-stack-overflow fa-2x"></i></a></li>
@@ -82,11 +101,11 @@
         <p class="text-sm-right">All rights reserved</p>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>*@
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

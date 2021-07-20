@@ -73,6 +73,7 @@
             services.AddTransient<IBookingService, BookingService>();
             services.AddTransient<IAvailableBooking, AvailableBooking>();
             services.AddTransient<ILocationService, LocationsService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddAuthentication()
                 .AddFacebook(opt =>
