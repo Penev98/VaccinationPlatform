@@ -1,3 +1,73 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+    $(document).ready(function () {
+        $("body").removeAttr('id');
+        $("body").attr('id', 'indexPage');
+    })
+</script>
+
+<div class="section bgcolor noover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tagline-message">
+                    <h3><mark class="rotate">Here you can find information about hospitals,</mark> vaccines, book an appointment for vaccination and much more!</h3>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+<section class="section lb nopadtop noover" style="background-color: #E5E4E2 !important ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <div class="service-box m30">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Fast and easy Registration</h3>
+                    <p>You can create a local account or use an external provider to join the plattform.</p>
+                    <br />
+                    <a class="btn btn-success" asp-area="Identity" asp-page="/Account/Register">Join now</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12">
+                <div class="service-box m30">
+                    <i class="fas fa-users"></i>
+                    <h3>Already a member</h3>                   
+                    <p>You can log in with your local account or use Facebook and Google to authenticate.</p>
+                    <br />
+                    <a class="btn btn-success" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12">
+                <div class="service-box m30">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Find a hospital</h3>
+                    <p>Use the option to filter out hospitals based around the area and town you are located in.</p>
+                    <br />
+                    <a asp-controller="Locations" asp-action="Index" class="btn btn-success">Check locations</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12">
+                <div class="service-box m30">
+                    <i class="far fa-calendar-check"></i>
+                    <h3>Book an appointment</h3>
+                    <p>Fill out the form with your personal information and book a place for vaccination now.</p>
+                    <br />
+                    <a asp-controller="Booking" asp-action="BookApointment" class="btn btn-success">Book now</a>
+                </div>
+            </div><!-- end col -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+
+</section><!-- end section -->

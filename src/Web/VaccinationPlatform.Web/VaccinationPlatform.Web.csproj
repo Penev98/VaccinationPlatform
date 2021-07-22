@@ -65,6 +65,9 @@
     <Content Update="wwwroot\css\main.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\css\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\css\util.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

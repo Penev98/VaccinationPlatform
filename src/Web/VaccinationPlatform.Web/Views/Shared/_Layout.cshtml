@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">
 
 </head>
-<body>
+<body id="default">
     <header>
         <div class="jumbotron mb-0">
             <div class="container text-center">
@@ -69,8 +69,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a asp-area="Identity" asp-page="/Account/Manage/Index"><span class="glyphicon glyphicon-user"></span>Welcome, @User.Identity.Name</a></li>
                             <li id="logout">
-                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                                    <button type="submit" class="nav-link btn btn-link text-dark"><a><span class="glyphicon glyphicon-log-out"></span> Logout</a></button>
+                                <form  id ="logoutButton2" class="form-inline text-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                   <button type="submit" class="nav-link btn btn-link text-dark"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
                                 </form>
                             </li>
                         </ul>

@@ -4,9 +4,9 @@
 
 @model BookingModel
 
-<h1 class="locations">@this.ViewData["Title"]</h1>
+<h1 class="locations moveLeft">@this.ViewData["Title"]</h1>
 
-<form method="post" class="col-md-4">
+<form method="post" class="col-md-4 down" style="margin-left:7px">
     <div class="validation" asp-validation-summary="All"></div>
     <div class="form-group">
         <label class="locations" asp-for="DistrictId">Select District</label>
