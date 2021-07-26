@@ -6,6 +6,14 @@
     background-position: center !important;
 }
 
+/*body#default {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://ak.picdn.net/shutterstock/videos/1060403468/thumb/1.jpg?ip=x480);
+    background-position: center !important;*/
+}
+
 body#indexPage {
     min-height: 100vh;
     display: flex;
@@ -146,3 +154,4 @@ div#locationsPage {
 .down{
     margin-bottom:10px!important;
 }
+

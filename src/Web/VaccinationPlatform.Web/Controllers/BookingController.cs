@@ -103,17 +103,27 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> CancelBooking(string id)
+        public async Task<IActionResult> CancelBooking(string id, int isAdmin)
         {
             await this.bookingService.CancelBookingAsync(id);
+
+            if (this.User.IsInRole("Administrator") && isAdmin == 1)
+            {
+                return this.Redirect("/Admin/AllBookings");
+            }
 
             return this.Redirect("/Booking/GetUserBookings");
         }
 
         [Authorize]
-        public async Task<IActionResult> RemoveBooking(string id)
+        public async Task<IActionResult> RemoveBooking(string id, int isAdmin)
         {
             await this.bookingService.RemoveBookingAsync(id);
+
+            if (this.User.IsInRole("Administrator") && isAdmin == 1)
+            {
+                return this.Redirect("/Admin/AllBookings");
+            }
 
             return this.Redirect("/Booking/GetUserBookings");
         }
@@ -121,16 +131,15 @@
         [Authorize]
         public IActionResult EditBooking(string id)
         {
-            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            var bookingModel = this.bookingService.GetUserBooking<BookingModel>(id, userId);
+            // string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var bookingModel = this.bookingService.GetUserBooking<BookingModel>(id/*, userId*/);
 
             return this.View(bookingModel);
         }
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> EditBooking(string id, BookingModel model)
+        public async Task<IActionResult> EditBooking(string id, BookingModel model, int isAdmin)
         {
             if (!this.ModelState.IsValid)
             {
@@ -138,6 +147,12 @@
             }
 
             await this.bookingService.EditBookingAsync(model, id);
+
+            if (this.User.IsInRole("Administrator") && isAdmin == 1)
+            {
+                return this.Redirect("/Admin/AllBookings");
+            }
+
             return this.Redirect("/Booking/GetUserBookings");
         }
 

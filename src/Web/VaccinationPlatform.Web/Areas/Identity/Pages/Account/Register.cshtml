@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="~/css/main.css" />
 <link rel="stylesheet" href="~/css/util.css" />
 
-<h1 class="locations">@ViewData["Title"]</h1>
+<h1 class="locations moveLeft">@ViewData["Title"]</h1>
 
-<div class="row">
+<div class="row moveLeft down">
     <div class="col-md-4">
         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="flex-sb flex-w">
 

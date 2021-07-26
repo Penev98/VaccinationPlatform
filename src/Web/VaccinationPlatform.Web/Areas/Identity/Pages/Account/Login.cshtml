@@ -8,8 +8,8 @@
         ViewData["Title"] = "Log In With";
     }
 
-    <h1 class="locations">@ViewData["Title"]</h1>
-    <div class="row">
+    <h1 class="locations moveLeft">@ViewData["Title"]</h1>
+    <div class="row moveLeft">
         <div class="col-md-3">
             <section>
                 <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="flex-sb flex-w">

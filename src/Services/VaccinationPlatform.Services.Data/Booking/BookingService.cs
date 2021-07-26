@@ -68,9 +68,9 @@
             return this.bookingRepo.AllWithDeleted().Where(x => x.BookedById == userId).OrderBy(x => x.IsDeleted).To<T>().ToList();
         }
 
-        public T GetUserBooking<T>(string bookingId, string userId)
+        public T GetUserBooking<T>(string bookingId/*, string userId*/)
         {
-            var bookingModel = this.bookingRepo.All().Where(x => x.BookedById == userId).Where(x => x.Id == bookingId).To<T>().FirstOrDefault();
+            var bookingModel = this.bookingRepo.All()./*Where(x => x.BookedById == userId).*/Where(x => x.Id == bookingId).To<T>().FirstOrDefault();
 
             return bookingModel;
         }

@@ -1,9 +1,9 @@
 ﻿
-@*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.css" />
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">*@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">
 
 @{
     ViewData["Title"] = "All Booked Appointments";
@@ -74,7 +74,7 @@
                 }
                 else
                 {
-                    <td><a asp-controller="Booking" asp-action="CancelBooking" asp-route-id="@booking.Id" class="confirmCancel"><i class="fas fa-window-close fa-2x"></i></a></td>
+                    <td><a asp-controller="Booking" asp-action="CancelBooking" asp-route-id="@booking.Id" asp-route-isAdmin="1" class="confirmCancel"><i class="fas fa-window-close fa-2x"></i></a></td>
                 }
                 @if (booking.IsDeleted)
                 {
@@ -82,10 +82,10 @@
                 }
                 else
                 {
-                    <td><a asp-controller="Booking" asp-action="EditBooking" asp-route-id="@booking.Id"><i class="fas fa-edit fa-2x"></i></a></td>
+                    <td><a asp-controller="Booking" asp-action="EditBooking" asp-route-id="@booking.Id" asp-route-isAdmin="1"><i class="fas fa-edit fa-2x"></i></a></td>
                 }
 
-                <td class="text-center"><a asp-controller="Booking" asp-action="RemoveBooking" asp-route-id="@booking.Id" class="confirmRemove"><i class="fas fa-trash-alt fa-2x"></i></a></td>
+                <td class="text-center"><a asp-controller="Booking" asp-action="RemoveBooking" asp-route-id="@booking.Id" asp-route-isAdmin="1" class="confirmRemove"><i class="fas fa-trash-alt fa-2x"></i></a></td>
             </tr>
             }
 
@@ -118,10 +118,6 @@
             order: [[0, 'asc']]
         });
     });
-
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
 
     $('.confirmCancel').on('click', function () {
         return confirm('Are you sure you want to cancel this appointment?');

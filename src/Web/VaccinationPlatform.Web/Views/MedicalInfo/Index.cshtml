@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Medical Information";
+}
+
+@model IEnumerable<MedicalInfoViewModel>
+
+<h1 class="locations moveLeft">@ViewData["Title"]</h1>
+@{
+    int count = 0;
+}
+
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="nav nav-justified navbar-nav">
+                <div class="navbar-form navbar-search" role="search">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-search btn-default" id="searchButton">
+                                <span class="glyphicon glyphicon-search"></span>
+                                <span class="label-icon">Search</span>
+                            </button>
+
+                        </div>
+                        <select class="form-control" style="width:1000px!important" id="selectDiseaseFilter">Select it</select>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-search btn-default" id="searchButton">
+                                GO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+@foreach (var disease in Model)
+{
+
+    var id = "colapse";
+    count++;
+    var name = id + count.ToString();
+
+    <div class="hidden diseaseGroup">
+        <div class="row" style="margin-left:70px">
+            <div class="col-sm-12 col-md-11">
+                <div class="thumbnail" style="background-color:lightblue !important">
+                    <div class="caption">
+                        <h3>@disease.Name</h3>
+                        <p>@disease.Information</p>
+                        <p class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#@name" aria-expanded="false" aria-controls="collapseExample">
+                                Vaccine Information
+                            </button> <a href="#" class="btn btn-default " role="button">More info on disease</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @foreach (var vaccine in disease.Vacciness)
+        {
+            <div class="collapse row" style="margin-left:85px" id="@name">
+                <div class="row">
+                    <div class="col-sm-10 col-md-5">
+                        <div class="thumbnail" style="background-color:lightblue !important">
+                            <div class="caption">
+                                <h3>@vaccine.Name</h3>
+                                <p>@vaccine.Information</p>
+                                <p class="text-center">
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        More info on vaccine
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+}
+
+
+<script>
+    $(document).one('click', '#selectDiseaseFilter', function GetDiseases() {
+
+        var diseaseSelect = document.getElementById('selectDiseaseFilter');
+
+        while (diseaseSelect.firstChild) {
+            diseaseSelect.removeChild(diseaseSelect.firstChild);
+        };
+        $.ajax({
+            type: "GET",
+            url: "/MedicalInfo/GetDiseases",
+            dataType: "json",
+            success: function (result) {
+                diseaseSelect.innerHTML += '<option value=""></option>';
+                for (var i = 0; i < result.length; i++) {
+
+                    diseaseSelect.innerHTML += '<option>' + result[i] + '</option>';
+                }
+
+            },
+            error: function (error) {
+                alert(error);
+            }
+        });
+    });
+
+    $(document).on('click', '#searchButton', function Search() {
+
+        var allDiseases = document.getElementsByClassName('diseaseGroup');
+        var searchedName = document.getElementById('selectDiseaseFilter').value;
+
+        if (searchedName != "") {
+
+
+            for (var i = 0; i < allDiseases.length; i++) {
+
+                var currentElement = allDiseases[i];
+
+                if (!currentElement.classList.contains('hidden')) {
+
+                    currentElement.classList.add('hidden');
+                }
+            }
+
+            for (var i = 0; i < allDiseases.length; i++) {
+
+                var currentElement = allDiseases[i];
+
+
+                if (currentElement.innerHTML.includes(searchedName)) {
+                    currentElement.classList.remove('hidden');
+                    console.log("removed");
+                }
+            }
+        }
+
+    });
+</script>

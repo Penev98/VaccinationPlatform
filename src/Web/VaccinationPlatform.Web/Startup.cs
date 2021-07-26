@@ -21,6 +21,7 @@
     using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Services.Data.Locations;
+    using VaccinationPlatform.Services.Data.MedicalInfo;
 
     // using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Mapping;
@@ -74,6 +75,7 @@
             services.AddTransient<IAvailableBooking, AvailableBooking>();
             services.AddTransient<ILocationService, LocationsService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IMedicalInfoService, MedicalInfoService>();
 
             services.AddAuthentication()
                 .AddFacebook(opt =>
