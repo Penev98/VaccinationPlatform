@@ -1,7 +1,16 @@
-﻿body#default {
-    min-height: 100vh;
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+body#default {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    /*min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
     background-image: url(https://wallpaperaccess.com/full/136920.jpg);
     background-position: center !important;
 }
@@ -12,13 +21,13 @@
     flex-direction: column;
     background-image: url(https://ak.picdn.net/shutterstock/videos/1060403468/thumb/1.jpg?ip=x480);
     background-position: center !important;*/
-}
+/*}*/
 
 body#indexPage {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url(https://images.theconversation.com/files/367599/original/file-20201104-23-1xy5a9j.jpg?ixlib=rb-1.1.0&rect=1%2C1%2C1024%2C530&q=45&auto=format&w=496&fit=clip);
+   /* background-image: url(https://images.theconversation.com/files/367599/original/file-20201104-23-1xy5a9j.jpg?ixlib=rb-1.1.0&rect=1%2C1%2C1024%2C530&q=45&auto=format&w=496&fit=clip);*/
     /*    background-position: center !important;*/
 }
 
@@ -35,8 +44,14 @@ body#indexPage {
 /* Add a gray background color and some padding to the footer */
 footer {
     background-color: #f2f2f2;
-    margin-top: auto;
-    padding-top: 20px;
+    clear: both;
+    position: relative;
+   /* height: 70px;
+    margin-top: -70px;*/
+    padding-top:10px;
+    margin-bottom:-10px;
+    padding-bottom:5px;
+
 }
 
 #homeTab {
@@ -45,7 +60,8 @@ footer {
 
 main {
     margin-left: 0px !important;
-    margin-bottom: 0px !important;
+    margin-bottom: 50px !important;
+
 }
 
 li#logout{
@@ -154,4 +170,9 @@ div#locationsPage {
 .down{
     margin-bottom:10px!important;
 }
+
+select#selectDistFilter{
+    width:150px!important;
+}
+
 

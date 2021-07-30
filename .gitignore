@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 src/Data/VaccinationPlatform.Data/Seeding/ClearTable.cs
 src/Web/VaccinationPlatform.Web/ApiKeys.txt
+src/Web/VaccinationPlatform.Web/ScaffoldingReadMe.txt

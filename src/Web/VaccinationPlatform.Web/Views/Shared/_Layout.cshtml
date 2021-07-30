@@ -8,13 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
 
+    
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />*@
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>*@
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>*@
     @*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>*@
 
     <script src="https://kit.fontawesome.com/93ab6c6aca.js" crossorigin="anonymous"></script>
+
+    @*<script src="https://kit.fontawesome.com/f96a58d84a.js" crossorigin="anonymous"></script>*@
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.js"></script>
     <link rel="stylesheet" href="~/css/custom.css" />
@@ -22,11 +25,10 @@
 
 
 
-
     @*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.css" />
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.25/b-1.7.1/r-2.2.9/datatables.min.js"></script>*@
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        @*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css">*@
 
 </head>
 <body id="default">
@@ -69,8 +71,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a asp-area="Identity" asp-page="/Account/Manage/Index"><span class="glyphicon glyphicon-user"></span>Welcome, @User.Identity.Name</a></li>
                             <li id="logout">
-                                <form  id ="logoutButton2" class="form-inline text-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
-                                   <button type="submit" class="nav-link btn btn-link text-dark"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+                                <form id="logoutButton2" class="form-inline text-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                                    <button type="submit" class="nav-link btn btn-link text-dark"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
                                 </form>
                             </li>
                         </ul>
@@ -103,10 +105,10 @@
     </footer>
 
     @*<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>*@
-        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

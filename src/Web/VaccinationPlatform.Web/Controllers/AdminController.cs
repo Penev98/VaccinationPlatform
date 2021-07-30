@@ -26,7 +26,6 @@
             IEnumerable<AllBookingsInfoViewModel> models = this.bookingService.GetAllBookings<AllBookingsInfoViewModel>();
 
             return this.View(models);
-            
         }
     }
 }
