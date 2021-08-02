@@ -23,7 +23,8 @@
         [Authorize(Roles = "Administrator")]
         public IActionResult AllBookings()
         {
-            IEnumerable<AllBookingsInfoViewModel> models = this.bookingService.GetAllBookings<AllBookingsInfoViewModel>();
+            IEnumerable<AllBookingsInfoViewModel> models = this.bookingService
+                .GetAllBookings<AllBookingsInfoViewModel>();
 
             return this.View(models);
         }

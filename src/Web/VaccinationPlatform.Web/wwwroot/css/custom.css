@@ -19,15 +19,15 @@ body#default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url(https://ak.picdn.net/shutterstock/videos/1060403468/thumb/1.jpg?ip=x480);
+    background-image: url(https://wallpaperaccess.com/full/136920.jpg);
     background-position: center !important;*/
-/*}*/
 
+/*}*/
 body#indexPage {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-   /* background-image: url(https://images.theconversation.com/files/367599/original/file-20201104-23-1xy5a9j.jpg?ixlib=rb-1.1.0&rect=1%2C1%2C1024%2C530&q=45&auto=format&w=496&fit=clip);*/
+    /* background-image: url(https://images.theconversation.com/files/367599/original/file-20201104-23-1xy5a9j.jpg?ixlib=rb-1.1.0&rect=1%2C1%2C1024%2C530&q=45&auto=format&w=496&fit=clip);*/
     /*    background-position: center !important;*/
 }
 

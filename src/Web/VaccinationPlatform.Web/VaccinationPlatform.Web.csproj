@@ -83,6 +83,12 @@
     <Content Update="wwwroot\images\icons\icon-google.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\js\site.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\site.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

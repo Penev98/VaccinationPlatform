@@ -71,17 +71,3 @@
     </div>
 </div>
 
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
-    $('.confirmCancel').on('click', function () {
-        return confirm('Are you sure you want to cancel this appointment?');
-    });
-
-    $('.confirmRemove').on('click', function () {
-        return confirm('If the booking is active this will cancel and delete it. Are you sure you want to remove this booking completely?');
-    });
-</script>
-
