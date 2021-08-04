@@ -40,6 +40,10 @@
                 var response = await this.client.SendEmailAsync(message);
                 Console.WriteLine(response.StatusCode);
                 Console.WriteLine(await response.Body.ReadAsStringAsync());
+
+                // var statusCode = response.StatusCode;
+                // string respBody = await response.Body.ReadAsStringAsync();
+                // bool success = response.IsSuccessStatusCode;
             }
             catch (Exception e)
             {

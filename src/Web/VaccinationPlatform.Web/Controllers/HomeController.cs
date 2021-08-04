@@ -1,12 +1,14 @@
 ﻿namespace VaccinationPlatform.Web.Controllers
 {
     using System.Diagnostics;
+    using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
+    using VaccinationPlatform.Services.Messaging;
     using VaccinationPlatform.Web.ViewModels;
 
     public class HomeController : BaseController
-    {
+    {    
         public IActionResult Index()
         {
             return this.View();

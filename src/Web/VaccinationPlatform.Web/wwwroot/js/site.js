@@ -1,4 +1,4 @@
-﻿$('#selectBookingDate, #selectDist, #selectTown').change(function ClearData() {
+﻿$('#selectBookingDate, #selectDist, #selectTown, #selectHosp').change(function ClearData() {
     var inlineDiv = document.getElementById("checkAvailableButton");
     if (inlineDiv.childElementCount > 1) {
         inlineDiv.lastChild.remove();

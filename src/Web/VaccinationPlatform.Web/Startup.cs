@@ -69,7 +69,7 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(File.ReadAllLines(@"..\..\Web\VaccinationPlatform.Web\ApiKeys.txt")[4]));
             services.AddTransient<IGetAllService, GetAllService>();
             services.AddTransient<IBookingService, BookingService>();
             services.AddTransient<IAvailableBooking, AvailableBooking>();

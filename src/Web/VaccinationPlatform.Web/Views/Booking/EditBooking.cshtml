@@ -1,52 +1,55 @@
 ﻿@{
-    this.ViewData["Title"] = "Edit Booiking";
+    this.ViewData["Title"] = "Edit Booking";
 }
 
 @model BookingModel
 
-<h1 class="locations moveLeft">@this.ViewData["Title"]</h1>
+<h1 class="locations" style="margin-left:35px">@this.ViewData["Title"]</h1>
 
-<form method="post" class="col-md-4 down" style="margin-left:7px">
-    <div class="validation" asp-validation-summary="All"></div>
-    <div class="form-group">
-        <label class="locations" asp-for="DistrictId">Select District</label>
-        <select id="selectDist" class="form-control" asp-for="DistrictId"><option value="@Model.DistrictId">@Model.DistrictName</option></select>
-        <span class="validation" asp-validation-for="DistrictId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="TownId">Select Town</label>
-        <select id="selectTown" class="form-control" asp-for="TownId"><option value="@Model.TownId">@Model.TownName</option></select>
-        <span class="validation" asp-validation-for="TownId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="HospitalId ">Select Hospital</label>
-        <select id="selectHosp" class="form-control" asp-for="HospitalId"><option value="@Model.HospitalId">@Model.HospitalName</option></select>
-        <span class="validation" asp-validation-for="HospitalId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="DiseaseId">Select Disease</label>
-        <select id="selectDisease" class="form-control" asp-for="DiseaseId"><option value="@Model.DiseaseId">@Model.DiseaseName</option></select>
-        <span class="validation" asp-validation-for="DiseaseId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="VaccineId">Select Vaccine</label>
-        <select id="selectVaccine" class="form-control" asp-for="VaccineId" ><option value="@Model.VaccineId">@Model.VaccineName</option></select>
-        <span class="validation" asp-validation-for="VaccineId"></span>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="BookingDate">Select Date</label>
-        <input type="datetime-local" class="form-control" id="selectBookingDate" asp-for="BookingDate" />
-        <span class="validation" asp-validation-for="BookingDate"></span>
-        <div class="form-inline" id="checkAvailableButton">
-            <a class="btn btn-info" id="checkDateA">Check if date is available</a>
-            @*<a class="btn btn-danger">Not Available</a>*@
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="locations" asp-for="OtherInfo">Aditional Information(not required)</label>
-        <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
-    </div>
+<div class="row down" style="margin-left:25px">
+    <div class="col-md-4" >
+        <form method="post">
+            <div class="validation" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label class="locations" asp-for="DistrictId">Select District</label>
+                <select id="selectDist" class="form-control" asp-for="DistrictId"><option value="@Model.DistrictId">@Model.DistrictName</option></select>
+                <span class="validation" asp-validation-for="DistrictId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="TownId">Select Town</label>
+                <select id="selectTown" class="form-control" asp-for="TownId"><option value="@Model.TownId">@Model.TownName</option></select>
+                <span class="validation" asp-validation-for="TownId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="HospitalId ">Select Hospital</label>
+                <select id="selectHosp" class="form-control" asp-for="HospitalId"><option value="@Model.HospitalId">@Model.HospitalName</option></select>
+                <span class="validation" asp-validation-for="HospitalId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="DiseaseId">Select Disease</label>
+                <select id="selectDisease" class="form-control" asp-for="DiseaseId"><option value="@Model.DiseaseId">@Model.DiseaseName</option></select>
+                <span class="validation" asp-validation-for="DiseaseId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="VaccineId">Select Vaccine</label>
+                <select id="selectVaccine" class="form-control" asp-for="VaccineId"><option value="@Model.VaccineId">@Model.VaccineName</option></select>
+                <span class="validation" asp-validation-for="VaccineId"></span>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="BookingDate">Select Date</label>
+                <input type="datetime-local" class="form-control" id="selectBookingDate" asp-for="BookingDate" />
+                <span class="validation" asp-validation-for="BookingDate"></span>
+                <div class="form-inline" id="checkAvailableButton">
+                    <a class="btn btn-info" id="checkDateA">Check if date is available</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="locations" asp-for="OtherInfo">Aditional Information(not required)</label>
+                <textarea class="form-control" rows="7" cols="56" asp-for="OtherInfo"></textarea>
+            </div>
 
-    <input type="submit" id="sendButton" value="Save changes" class="btn btn-info confirmChanges" />
-    <a id="sendButton" value="Cancel" class="btn btn-danger" asp-controller="Booking" asp-action="GetUserBookings"> Cancel </a>
-</form>
+            <input type="submit" id="sendButton" value="Save changes" class="btn btn-info confirmChanges" style="margin-right:5px"/>
+            <a id="sendButton" value="Cancel" class="btn btn-danger" asp-controller="Booking" asp-action="GetUserBookings"> Cancel </a>
+        </form>
+    </div>
+</div>

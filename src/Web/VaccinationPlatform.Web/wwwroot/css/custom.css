@@ -158,7 +158,7 @@ p#hospDisc {
 }
 
 a#hospButton {
-    margin-left: 223px;
+    margin-left: 260px;
 }
 
 div#locationsPage {
@@ -173,6 +173,10 @@ div#locationsPage {
 
 select#selectDistFilter{
     width:150px!important;
+}
+
+.right{
+    margin-left:50px!important;
 }
 
 
