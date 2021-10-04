@@ -11,21 +11,18 @@
     using Microsoft.AspNetCore.Mvc;
     using VaccinationPlatform.Data.Models;
     using VaccinationPlatform.Services;
-    using VaccinationPlatform.Services.Data;
     using VaccinationPlatform.Services.Data.Booking;
     using VaccinationPlatform.Web.ViewModels;
     using VaccinationPlatform.Web.ViewModels.InputModels;
 
     public class BookingController : BaseController
     {
-        private readonly IGetAllService getAll;
         private readonly IBookingService bookingService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IAvailableBooking checkBooking;
 
-        public BookingController(IGetAllService getAll, IBookingService bookingService, UserManager<ApplicationUser> userManager, IAvailableBooking checkBooking)
+        public BookingController(IBookingService bookingService, UserManager<ApplicationUser> userManager, IAvailableBooking checkBooking)
         {
-            this.getAll = getAll;
             this.bookingService = bookingService;
             this.userManager = userManager;
             this.checkBooking = checkBooking;
@@ -56,36 +53,6 @@
 
             await this.bookingService.CreateBookingAsync(bookingModel, userId);
             return this.RedirectToAction("SuccesfullBooking");
-        }
-
-        [HttpGet]
-        public JsonResult GetAllDistrictsAjax()
-        {
-            return this.Json(this.getAll.GetDistricts());
-        }
-
-        [HttpGet]
-        public JsonResult GetTownsByDistrictAjax(int districtId)
-        {
-            return this.Json(this.getAll.GetTownsByDistrict(districtId));
-        }
-
-        [HttpGet]
-        public JsonResult GetHospitalsByTownAjax(int townId)
-        {
-            return this.Json(this.getAll.GetHospitalsByTown(townId));
-        }
-
-        [HttpGet]
-        public JsonResult GetAllDiseasesAjax()
-        {
-            return this.Json(this.getAll.GetDiseases());
-        }
-
-        [HttpGet]
-        public JsonResult GetVaccinesByDiseaseAjax(int diseaseId)
-        {
-            return this.Json(this.getAll.GetVaccinesByDisease(diseaseId));
         }
 
         public IActionResult SuccesfullBooking()
@@ -159,9 +126,11 @@
         [HttpGet]
         public int CheckDate(int hospitalId, DateTime bookingDate)
         {
-            bool result = this.checkBooking.IsBookingAvailable(hospitalId, bookingDate);
+            bool freeDateCheck = this.checkBooking.IsBookingAvailable(hospitalId, bookingDate);
+            bool pastDateCheck = this.checkBooking.IsBookingInThePast(bookingDate);
 
-            if (result)
+            // Booking should be free AND not in the past
+            if (freeDateCheck == true && pastDateCheck == false)
             {
                 return 0;
             }

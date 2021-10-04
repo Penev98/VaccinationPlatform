@@ -26,18 +26,5 @@
             List<LocationsViewModel> locations = this.locationsService.GetModels<LocationsViewModel>().ToList();
             return this.View(locations);
         }
-
-        [HttpGet]
-        public JsonResult GetDistricts()
-        {
-            return this.Json(this.getService.GetDistricts());
-        }
-
-        public JsonResult GetTowns(int districtId)
-        {
-            return this.Json(this.getService.GetTownsByDistrict(districtId));
-        }
-
-       
     }
 }

@@ -1,5 +1,5 @@
 ﻿$('#selectBookingDate, #selectDist, #selectTown, #selectHosp').change(function ClearData() {
-    var inlineDiv = document.getElementById("checkAvailableButton");
+    let inlineDiv = document.getElementById("checkAvailableButton");
     if (inlineDiv.childElementCount > 1) {
         inlineDiv.lastChild.remove();
     }
@@ -7,12 +7,12 @@
 
 $(document).on('click', '#checkDateA', function CheckDate() {
 
-    var inlineDiv = document.getElementById("checkAvailableButton");
+    let inlineDiv = document.getElementById("checkAvailableButton");
 
-    var hospitalField = document.getElementById("selectHosp");
-    var hospitalId = hospitalField.options[hospitalField.selectedIndex].value;
+    let hospitalField = document.getElementById("selectHosp");
+    let hospitalId = hospitalField.options[hospitalField.selectedIndex].value;
 
-    var bookingDate = document.getElementById("selectBookingDate").value;
+    let bookingDate = document.getElementById("selectBookingDate").value;
 
     $.ajax({
         type: "GET",
@@ -40,8 +40,9 @@ $(document).on('click', '#checkDateA', function CheckDate() {
     });
 });
 
+//GET Districts AJAX
 $(document).one('click', '#selectDist', function GetAllDistricts() {
-    var ele = document.getElementById('selectDist');
+    let ele = document.getElementById('selectDist');
 
     while (ele.firstChild) {
         ele.removeChild(ele.firstChild);
@@ -49,13 +50,13 @@ $(document).one('click', '#selectDist', function GetAllDistricts() {
 
     $.ajax({
         type: "GET",
-        url: "/Booking/GetAllDistrictsAjax",
+        url: "/api/data/districts",
         dataType: "json",
         success: function (result) {
 
             ele.innerHTML += '<option value=""></option>';
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 ele.innerHTML = ele.innerHTML +
                     '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
             };
@@ -66,12 +67,13 @@ $(document).one('click', '#selectDist', function GetAllDistricts() {
     });
 });
 
+//GET Towns AJAX
 $(document).on('change', '#selectDist', function GetTownsByDistrict() {
 
-    var districtField = document.getElementById("selectDist");
-    var districtId = districtField.options[districtField.selectedIndex].value;
+    let districtField = document.getElementById("selectDist");
+    let districtId = districtField.options[districtField.selectedIndex].value;
 
-    var ele = document.getElementById('selectTown');
+    let ele = document.getElementById('selectTown');
 
     while (ele.firstChild) {
         ele.removeChild(ele.firstChild);
@@ -79,14 +81,14 @@ $(document).on('change', '#selectDist', function GetTownsByDistrict() {
 
     $.ajax({
         type: "GET",
-        url: "/Booking/GetTownsByDistrictAjax",
+        url: "/api/data/towns",
         data: { districtId: districtId },
         dataType: "json",
         success: function (result) {
 
             ele.innerHTML += '<option value=""></option>';
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 ele.innerHTML = ele.innerHTML +
                     '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
             };
@@ -99,9 +101,9 @@ $(document).on('change', '#selectDist', function GetTownsByDistrict() {
 
 $('#selectTown, #selectDist').change(function GetHospitalsByTown() {
 
-    var townField = document.getElementById("selectTown");
-    var townId = townField.options[townField.selectedIndex].value;
-    var ele = document.getElementById('selectHosp');
+    let townField = document.getElementById("selectTown");
+    let townId = townField.options[townField.selectedIndex].value;
+    let ele = document.getElementById('selectHosp');
 
     while (ele.firstChild) {
         ele.removeChild(ele.firstChild);
@@ -109,14 +111,14 @@ $('#selectTown, #selectDist').change(function GetHospitalsByTown() {
 
     $.ajax({
         type: "GET",
-        url: "/Booking/GetHospitalsByTownAjax",
+        url: "/api/data/hospitals",
         data: { townId: townId },
         dataType: "json",
         success: function (result) {
 
             ele.innerHTML += '<option value=""></option>';
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 ele.innerHTML = ele.innerHTML +
                     '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
             };
@@ -128,7 +130,7 @@ $('#selectTown, #selectDist').change(function GetHospitalsByTown() {
 });
 
 $(document).one('click', '#selectDisease', function GetAllDiseases() {
-    var ele = document.getElementById('selectDisease');
+    let ele = document.getElementById('selectDisease');
 
     while (ele.firstChild) {
         ele.removeChild(ele.firstChild);
@@ -136,13 +138,13 @@ $(document).one('click', '#selectDisease', function GetAllDiseases() {
 
     $.ajax({
         type: "GET",
-        url: "/Booking/GetAllDiseasesAjax",
+        url: "/api/data/diseases",
         dataType: "json",
         success: function (result) {
 
             ele.innerHTML += '<option value=""></option>';
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 ele.innerHTML = ele.innerHTML +
                     '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
             };
@@ -154,9 +156,9 @@ $(document).one('click', '#selectDisease', function GetAllDiseases() {
 });
 
 $(document).on('change', '#selectDisease', function GetVaccinesByDisease() {
-    var diseaseField = document.getElementById("selectDisease");
-    var diseaseId = diseaseField.options[diseaseField.selectedIndex].value;
-    var ele = document.getElementById('selectVaccine');
+    let diseaseField = document.getElementById("selectDisease");
+    let diseaseId = diseaseField.options[diseaseField.selectedIndex].value;
+    let ele = document.getElementById('selectVaccine');
 
     while (ele.firstChild) {
         ele.removeChild(ele.firstChild);
@@ -164,12 +166,12 @@ $(document).on('change', '#selectDisease', function GetVaccinesByDisease() {
 
     $.ajax({
         type: "GET",
-        url: "/Booking/GetVaccinesByDiseaseAjax",
+        url: "/api/data/vaccines",
         data: { diseaseId: diseaseId },
         dataType: "json",
         success: function (result) {
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 ele.innerHTML = ele.innerHTML +
                     '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>'
             };
@@ -182,18 +184,18 @@ $(document).on('change', '#selectDisease', function GetVaccinesByDisease() {
 
 $(document).one('click', '#selectDistFilter', function GetDistricts() {
 
-    var distSelect = document.getElementById('selectDistFilter');
+    let distSelect = document.getElementById('selectDistFilter');
 
     while (distSelect.firstChild) {
         distSelect.removeChild(distSelect.firstChild);
     };
     $.ajax({
         type: "GET",
-        url: "/Locations/GetDistricts",
+        url: "/api/data/districts",
         dataType: "json",
         success: function (result) {
             distSelect.innerHTML += '<option value=""></option>';
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
 
                 distSelect.innerHTML += '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>';
             }
@@ -205,24 +207,24 @@ $(document).one('click', '#selectDistFilter', function GetDistricts() {
     });
 });
 
-$(document).on('change', '#selectDistFilter', function GetDistricts() {
+$(document).on('change', '#selectDistFilter', function GetTowns() {
 
-    var townsSelect = document.getElementById('selectTownFilter');
+    let townsSelect = document.getElementById('selectTownFilter');
 
-    var districtField = document.getElementById("selectDistFilter");
-    var districtId = districtField.options[districtField.selectedIndex].value;
+    let districtField = document.getElementById("selectDistFilter");
+    let districtId = districtField.options[districtField.selectedIndex].value;
 
     while (townsSelect.firstChild) {
         townsSelect.removeChild(townsSelect.firstChild);
     };
     $.ajax({
         type: "GET",
-        url: "/Locations/GetTowns",
+        url: "/api/data/towns",
         data: { districtId: districtId },
         dataType: "json",
         success: function (result) {
 
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
 
                 townsSelect.innerHTML += '<option value="' + result[i]['key'] + '">' + result[i]['value'] + '</option>';
             }
@@ -236,15 +238,15 @@ $(document).on('change', '#selectDistFilter', function GetDistricts() {
 
 $(document).on('click', '#filterButton', function Filter() {
 
-    var searchedTownId = document.getElementById('selectTownFilter').value;
+    let searchedTownId = document.getElementById('selectTownFilter').value;
 
-    var allDiv = document.getElementById('allLocations');
-    var allLocations = allDiv.getElementsByClassName('elementCard');
+    let allDiv = document.getElementById('allLocations');
+    let allLocations = allDiv.getElementsByClassName('elementCard');
 
     //If there are any removed elements after filtering , reset them for the next filtering
-    for (var i = 0; i < allLocations.length; i++) {
+    for (let i = 0; i < allLocations.length; i++) {
 
-        var currentElement = allLocations[i];
+        let currentElement = allLocations[i];
 
         if (currentElement.classList.contains('hidden')) {
 
@@ -253,10 +255,10 @@ $(document).on('click', '#filterButton', function Filter() {
     }
 
     //Remove(add class = "hidden") the elements that don't match the filter criteria
-    for (var i = 0; i < allLocations.length; i++) {
+    for (let i = 0; i < allLocations.length; i++) {
 
-        var currentElement = allLocations[i];
-        var hidden = currentElement.children[1];
+        let currentElement = allLocations[i];
+        let hidden = currentElement.children[1];
 
         if (hidden.innerHTML != searchedTownId) {
             currentElement.classList.add('hidden');
@@ -268,7 +270,7 @@ $(document).on('click', '#filterButton', function Filter() {
 
 $(document).one('click', '#selectDiseaseFilter', function GetDiseases() {
 
-    var diseaseSelect = document.getElementById('selectDiseaseFilter');
+    let diseaseSelect = document.getElementById('selectDiseaseFilter');
 
     while (diseaseSelect.firstChild) {
         diseaseSelect.removeChild(diseaseSelect.firstChild);
@@ -279,7 +281,7 @@ $(document).one('click', '#selectDiseaseFilter', function GetDiseases() {
         dataType: "json",
         success: function (result) {
             diseaseSelect.innerHTML += '<option value=""></option>';
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
 
                 diseaseSelect.innerHTML += '<option>' + result[i] + '</option>';
             }
@@ -293,14 +295,14 @@ $(document).one('click', '#selectDiseaseFilter', function GetDiseases() {
 
 $(document).on('click', '#searchButton', function Search() {
 
-    var allDiseases = document.getElementsByClassName('diseaseGroup');
-    var searchedName = document.getElementById('selectDiseaseFilter').value;
+    let allDiseases = document.getElementsByClassName('diseaseGroup');
+    let searchedName = document.getElementById('selectDiseaseFilter').value;
 
     if (searchedName != "") {
 
-        for (var i = 0; i < allDiseases.length; i++) {
+        for (let i = 0; i < allDiseases.length; i++) {
 
-            var currentElement = allDiseases[i];
+            let currentElement = allDiseases[i];
 
             if (!currentElement.classList.contains('hidden')) {
 
@@ -308,9 +310,9 @@ $(document).on('click', '#searchButton', function Search() {
             }
         }
 
-        for (var i = 0; i < allDiseases.length; i++) {
+        for (let i = 0; i < allDiseases.length; i++) {
 
-            var currentElement = allDiseases[i];
+            let currentElement = allDiseases[i];
 
             if (currentElement.innerHTML.includes(searchedName)) {
                 currentElement.classList.remove('hidden');

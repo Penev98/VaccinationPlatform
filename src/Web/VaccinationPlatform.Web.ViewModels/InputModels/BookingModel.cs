@@ -47,14 +47,46 @@
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-             var service = (IAvailableBooking)validationContext.GetService(typeof(IAvailableBooking));
+            IList<ValidationResult> results = new List<ValidationResult>();
 
-             bool result = service.IsBookingAvailable(this.HospitalId, this.BookingDate);
-
-             if (result == false)
+            // if date is binded correctly
+            if (this.BookingDate.Year > 0001)
             {
-                yield return new ValidationResult("This date is already booked for this hospital.", new[] { "BookingDate" });
+                var freeDateCheck = this.CheckFreeDate(validationContext);
+                var pastDateCheck = this.CheckPastDate(validationContext);
+                results.Add(freeDateCheck);
+                results.Add(pastDateCheck);
             }
+
+            return results;
+        }
+
+        private ValidationResult CheckFreeDate(ValidationContext validationContext)
+        {
+            var service = (IAvailableBooking)validationContext.GetService(typeof(IAvailableBooking));
+
+            bool result = service.IsBookingAvailable(this.HospitalId, this.BookingDate);
+
+            if (result == false)
+            {
+                 return new ValidationResult("This date is already booked for this hospital.", new[] { "BookingDate" });
+            }
+
+            return ValidationResult.Success;
+        }
+
+        private ValidationResult CheckPastDate(ValidationContext validationContext)
+        {
+            var service = (IAvailableBooking)validationContext.GetService(typeof(IAvailableBooking));
+
+            bool result = service.IsBookingInThePast(this.BookingDate);
+
+            if (result == true)
+            {
+                return new ValidationResult("Date cannot be in the past.", new[] { "BookingDate" });
+            }
+
+            return ValidationResult.Success;
         }
     }
 }

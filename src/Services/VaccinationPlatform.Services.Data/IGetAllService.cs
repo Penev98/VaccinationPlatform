@@ -17,6 +17,5 @@
         public IEnumerable<KeyValuePair<string, string>> GetDiseases();
 
         public IEnumerable<KeyValuePair<string, string>> GetVaccinesByDisease(int diseaseId);
-
     }
 }

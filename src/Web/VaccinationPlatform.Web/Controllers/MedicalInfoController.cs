@@ -9,7 +9,7 @@
     using VaccinationPlatform.Services.Data.MedicalInfo;
     using VaccinationPlatform.Web.ViewModels;
 
-    public class MedicalInfoController : Controller
+    public class MedicalInfoController : BaseController
     {
         private readonly IMedicalInfoService medicalInfoService;
 

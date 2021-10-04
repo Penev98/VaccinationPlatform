@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using VaccinationPlatform.Data.Common.Repositories;
-
-namespace VaccinationPlatform.Services
+﻿namespace VaccinationPlatform.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using VaccinationPlatform.Data.Common.Repositories;
+
     public class AvailableBooking : IAvailableBooking
     {
 
@@ -28,6 +29,18 @@ namespace VaccinationPlatform.Services
             {
                 return false;
             }
+        }
+
+        public bool IsBookingInThePast(DateTime dateToCheck)
+        {
+            int result = dateToCheck.CompareTo(DateTime.Now);
+
+            if (result == -1)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
